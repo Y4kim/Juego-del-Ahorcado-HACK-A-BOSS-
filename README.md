@@ -1,12 +1,12 @@
 # Juego-del-Ahorcado-HACK-A-BOSS-
 
-Ideas:
-Nuevo nombre Letras en la Cuerda -> Ana
-HTML:
-Extra : qwerty,
-PARA MAÑANA:
--Ubicarlo bien 
--Empezar a tocar JS
+tareas pendientes:
+    - Modificar nombre del proyecto
+    - Mirar CSS para pantallas IPAD/MOVIL
+    - Empezar a tocar JS
 
-///////////////////////
+ideas:
+    - Nuevo nombre "Letras en la Cuerda" => Ana
+    - QWERTY (disposición del teclado)
+
 
