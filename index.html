@@ -12,19 +12,29 @@
         <h1>Letras En la Cuerda</h1>
       </header>
       <nav>
-        <ul class="menu">
-          <li><a href="">English</a></li>
-          <li><a href="">Español</a></li>
+         <ul class="menu">
+          <li><button  id="english">English</button></li>
+          <li><button  id="espanol">Español</button></li>
         </ul>
       </nav>
+
       <section class="categoria">CATEGORIA</section>
-      <figure class="dibujo">
-        <img class="Pizarra" alt="" />
-      </figure>
-      <section class="palabra">_ _ _ _ _</section>
+
+      <section id="fondoPizarra">
+        <figure class="dibujo">
+          <img
+            src="assets/imagenes/img0.png"
+            alt="ahorcado"
+            id="ahorcado"
+          />
+        </figure>
+        <p id="palabraACompletar"></p>
+      </section>
+
       <section class="intentos">Intentos restantes: <span id="intentosRestantes">6</span></section>
-      <section class="teclado">
-        <div>
+      
+      <section class="teclado" id="letras">
+        
           <button>Q</button>
           <button>W</button>
           <button>E</button>
@@ -35,8 +45,6 @@
           <button>I</button>
           <button>O</button>
           <button>P</button>
-        </div>
-        <div>
           <button>A</button>
           <button>S</button>
           <button>D</button>
@@ -47,8 +55,6 @@
           <button>K</button>
           <button>L</button>
           <button>Ñ</button>
-        </div>
-        <div>
           <button>Z</button>
           <button>X</button>
           <button>C</button>
@@ -56,7 +62,6 @@
           <button>B</button>
           <button>N</button>
           <button>M</button>
-        </div>
       </section>
       <footer>
         <p>T</p>
