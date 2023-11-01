@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'tiza';
-  src:url(/assets/fonts/KGSecondChancesSketch.ttf);
+  src:url(assets/fonts/KGSecondChancesSketch.ttf);
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'solid';
-  src:url(/assets/fonts/KGSecondChancesSolid.ttf);
+  src:url(assets/fonts/KGSecondChancesSolid.ttf);
   font-style: normal;
   font-weight: normal;
 }
@@ -117,7 +117,7 @@ figure.dibujo {
 }
 
 #fondoPizarra{
-  background-image: url(/assets/imagenes/pizarra02.jpg);
+  background-image: url(assets/imagenes/pizarra02.jpg);
 }
 section.palabra {
   background-color: antiquewhite;

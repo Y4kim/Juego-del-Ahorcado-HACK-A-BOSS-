@@ -79,14 +79,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  const imagenesAhorcado = [
-    "/assets/imagenes/Img1.jpg",
-    "/assets/imagenes/Img2.jpg",
-    "/assets/imagenes/Img3.jpg",
-    "/assets/imagenes/Img4.jpg",
-    "/assets/imagenes/Img5.jpg",
-    "/assets/imagenes/Img6.jpg",
-  ];
-
-  let intentosFallidos = 0;
 });
