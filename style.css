@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'tiza';
+  src:url(/assets/fonts/KGSecondChancesSketch.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'solid';
+  src:url(/assets/fonts/KGSecondChancesSolid.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,7 +19,6 @@
 }
 
 main {
-  background-color: cadetblue;
   min-height: 100vh;
   display: grid;
   grid-template-areas:
@@ -22,13 +35,17 @@ main {
 header {
   grid-area: titulo;
   text-align: center;
+  background-color: black;
+  color: aliceblue;
+  font-family: 'solid';
 }
 
 nav {
   /* barra de navegacion */
   grid-area: menu;
-  background-color: chartreuse;
+  background-color: bisque;
   list-style: none;
+  font-family: 'tiza';
 }
 
 ul.menu {
@@ -38,6 +55,7 @@ ul.menu {
   justify-content: space-around;
   list-style: none;
   padding-top: 1rem;
+  font-family: 'tiza';
 }
 
 a {
@@ -48,21 +66,25 @@ a {
 
 section.categoria {
   grid-area: categoria;
-  background-color: blue;
-  color: white;
+  background-color: antiquewhite;
+  color: black;
   text-align: center;
+  font-family: 'tiza';
 }
 
 figure.dibujo {
   grid-area: dibujo;
-  background-color: chocolate;
   text-align: center;
+  background-image: url(/assets/imagenes/pizarra02.jpg);
+  background-size: cover;
+  font-family: 'tiza';
 }
 
 section.palabra {
-  background-color: bisque;
+  background-color: antiquewhite;
   grid-area: palabra;
   text-align: center;
+  font-family: 'tiza';
 }
 
 section.teclado {
@@ -84,8 +106,11 @@ button {
 
 footer {
   grid-area: footer;
-  background-color: white;
+  color: aliceblue;
+  justify-content: center;
+  background-color: black;
   width: 100%;
   display: flex;
   flex-direction: row;
+  font-family: 'solid';
 }
