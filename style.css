@@ -26,19 +26,26 @@ main {
   "menu"
   "categoria"
   "dibujo"
-  "palabra"
+
   "intentos"
   "teclado"
   "footer";
-  grid-template-rows: 6rem 4rem 2rem 25rem 4rem 4rem auto 3rem;
+  grid-template-rows: 6rem 6rem 2rem 30rem  4rem auto 3rem;
 
 }
 
 
 header {
   grid-area: titulo;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: black;
+
+}
+
+header h1{
+  text-align: center;
   color: aliceblue;
   font-family: 'solid';
 }
@@ -59,12 +66,51 @@ ul.menu {
   list-style: none;
   padding-top: 1rem;
   font-family: 'tiza';
+ 
+
 }
 
-a {
-  /* para limpiar los enlaces */
-  color: black;
-  text-decoration: none;
+
+/* Botones IDIOMAS */
+#espanol {
+  font-family: "tiza";
+  font-size:20px;
+  color: white;
+  padding: 20px 10px 20px 10px;
+  width: 200px;
+  border: none;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+
+#espanol:hover {
+  font-family: "tiza";
+  font-size:20px;
+  color: white;
+  padding: 20px 10px 20px 10px;
+  border: none;
+  background-color: lightsalmon;
+  border-radius: 5px;
+} 
+#english {
+  font-family: "tiza";
+  font-size:20px;
+  color: white;
+  padding: 20px 10px 20px 10px;
+  width: 200px;
+  border: none;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+
+#english:hover {
+  font-family: "tiza";
+  font-size:20px;
+  color: white;
+  padding: 20px 10px 20px 10px;
+  border: none;
+  background-color: lightsalmon;
+  border-radius: 5px;
 }
 
 section.categoria {
@@ -78,17 +124,39 @@ section.categoria {
 figure.dibujo {
   grid-area: dibujo;
   text-align: center;
-  background-image: url(/assets/imagenes/pizarra02.jpg);
   background-size: cover;
   font-family: 'tiza';
 }
+#ahorcado{
+  margin: 40px;
+  width: 300px;
+}
 
+#fondoPizarra{
+  background-image: url(/assets/imagenes/pizarra02.jpg);
+}
 section.palabra {
   background-color: antiquewhite;
   grid-area: palabra;
   text-align: center;
   font-family: 'tiza';
 }
+
+#palabraACompletar{
+  color:white;
+  font-family: 'tiza';
+  text-align: center;
+  
+  }
+  #palabraACompletar span {
+    font-family: 'tiza';
+    vertical-align: bottom;
+    font-size: 2em;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    margin-right: 8px;
+    width: 30px;
+  }
 
 section.intentos {
     background-color: antiquewhite;
@@ -101,16 +169,11 @@ section.teclado {
   /* teclado */
   grid-area: teclado;
   height: auto;
+  padding: 20px 30% 20px 30%;
+  text-align:center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra teclado*/
 }
 
-
-section.teclado div {
-  /* teclado */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 button {
   /* teclado */
