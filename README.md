@@ -4,9 +4,13 @@ tareas pendientes:
     - Modificar nombre del proyecto
     - Marco pizarra
     - Meter espacio entre las letras (separar palabras)
-    - Revisar estilo de letra
-    - Categorías
-    - Tecla que se pulsa que se desactive y salga una X
+    - Categorías // Hemos comentado
+    - Teclas ya se desactivan, que cambie el color si es acierto o fallo.
+    - Añadir un texto cuando pierde y otro cuando gana el jugador.
+    - Arreglar el teclado para volver a centrar.
+    - Hacer qeu la página no haga scroll.
+    - Botón que diga si hemos ganado o perdido y de opción de inicializar el juego.
+    - Responsive.
 
 ideas:
     - Nuevo nombre "Letras en la Cuerda" => Ana
