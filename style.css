@@ -75,7 +75,7 @@ ul.menu {
 
 
 /* Botones IDIOMAS */
-#espanol {
+#empiezaElJuego {
   font-family: "tiza";
   font-size:15px;
   color: white;
@@ -86,7 +86,7 @@ ul.menu {
   border-radius: 5px;
 }
 
-#espanol:hover {
+#empiezaElJuego:hover {
   font-family: "tiza";
   font-size:15px;
   color: white;
@@ -95,26 +95,7 @@ ul.menu {
   background-color: lightsalmon;
   border-radius: 5px;
 } 
-#english {
-  font-family: "tiza";
-  font-size:15px;
-  color: white;
-  padding: 15px 10px 15px 10px;
-  width: 200px;
-  border: none;
-  background-color: lightblue;
-  border-radius: 5px;
-}
 
-#english:hover {
-  font-family: "tiza";
-  font-size:15px;
-  color: white;
-  padding: 15px 10px 15px 10px;
-  border: none;
-  background-color: lightsalmon;
-  border-radius: 5px;
-}
 
 section.categoria {
   grid-area: categoria;

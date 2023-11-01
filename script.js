@@ -80,7 +80,7 @@ function id(str){
 }
 
 let intentosRestantesElement = id("intentosRestantes");
-  const botonJugar = id('espanol')
+  const botonJugar = id('empiezaElJuego')
   console.log('Haz clic en el botón Empezar a jugar para inciar el juego! Suerte!!! ')
   botonJugar.addEventListener('click', empezarJuego)
 
@@ -162,5 +162,5 @@ let intentosRestantesElement = id("intentosRestantes");
         "/assets/imagenes/Img4.jpg",
         "/assets/imagenes/Img5.jpg",
         "/assets/imagenes/Img6.jpg"
-      ];
+    ];
       let intentosFallidos = 0;
