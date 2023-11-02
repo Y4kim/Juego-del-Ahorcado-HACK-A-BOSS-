@@ -3,8 +3,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   let palabraSecreta;
   let intentosRestantes = 6;
-  let cantidadErrores = 0;
-  let cantidadAciertos = 0;
 
   const arrayPalabras = [
     "gato",
@@ -20,15 +18,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let intentosRestantesElement = id("intentosRestantes");
   const botonJugar = id("empiezaElJuego");
-  console.log("Haz clic en el botón Empezar a jugar para iniciar el juego. ¡Suerte!");
-  botonJugar.addEventListener("click", empezarJuego);
+  const botonLetra = document.querySelectorAll("#letras button");
+  const imagen = id("ahorcado");
+  
+  function deshabilitarTeclado(disable) {
+    for (let i = 0; i < botonLetra.length; i++) {
+      botonLetra[i].disabled = disable;
+    }
+  }
 
-  function empezarJuego(eventoClic) {
+  function empezarJuego() {
     botonJugar.disabled = true;
-    console.log(`¿El botón Empezar a jugar está deshabilitado? ${botonJugar.disabled}`);
 
-    cantidadErrores = 0;
-    cantidadAciertos = 0;
+    deshabilitarTeclado(false);
+    intentosRestantes = 6;
+    intentosRestantesElement.textContent = intentosRestantes;
+    imagen.src = `assets/imagenes/Img0.png`;
 
     const parrafo = id("palabraACompletar");
     parrafo.innerHTML = "";
@@ -45,10 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  const botonLetra = document.querySelectorAll("#letras button");
-
-  for (let i = 0; i < botonLetra.length; i++) {
-    botonLetra[i].addEventListener("click", manejarClicLetra);
+  function finalizarJuego() {
+    deshabilitarTeclado(true);
+    botonJugar.disabled = false;
   }
 
   function manejarClicLetra(evento) {
@@ -60,23 +64,39 @@ document.addEventListener("DOMContentLoaded", function () {
     const letra = botonLetraApretada.innerHTML.toLowerCase();
     const palabra = palabraSecreta.toLowerCase();
 
-    let acerto = false;
+    let acierto = false;
     for (let i = 0; i < palabra.length; i++) {
       if (letra == palabra[i]) {
         spans[i].innerHTML = letra;
-        cantidadAciertos++;
-        acerto = true;
+        acierto = true;
       }
     }
-    if (acerto == false) {
-      cantidadErrores++;
-      const fuenteImagen = `assets/imagenes/Img${cantidadErrores}.png`;
-      const imagen = id("ahorcado");
-      imagen.src = fuenteImagen;
-    } else if (cantidadErrores == 6) {
-      const fuenteImagen = `assets/imagenes/Img6.png`;
-      imagen.src = fuenteImagen;
+
+    if (acierto) {
+      let completa = true;
+      for (let i = 0; i < palabra.length; i++) {
+        if (spans[i].innerHTML != palabra[i]) {
+          completa = false;
+          break;
+        }
+      }
+      if (completa)
+      finalizarJuego();
+    }
+    else {
+      intentosRestantes--;
+      intentosRestantesElement.textContent = intentosRestantes;
+      imagen.src = `assets/imagenes/Img${6 - intentosRestantes}.png`;
+      if (intentosRestantes == 0)
+        finalizarJuego();
     }
   }
+  
+  botonJugar.addEventListener("click", empezarJuego);
 
+  for (let i = 0; i < botonLetra.length; i++) {
+    botonLetra[i].addEventListener("click", manejarClicLetra);
+  }
+  
+  deshabilitarTeclado(true);
 });
