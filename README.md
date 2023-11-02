@@ -11,6 +11,7 @@ tareas pendientes:
     - Hacer qeu la página no haga scroll.
     - Botón que diga si hemos ganado o perdido y de opción de inicializar el juego.
     - Responsive.
+    - Poner lista de categorias en vez de botones
 
 ideas:
     - Nuevo nombre "Letras en la Cuerda" => Ana
