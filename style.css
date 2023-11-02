@@ -50,22 +50,6 @@ header h1{
   font-family: 'solid';
 }
 
-.title {
-  font-family: 'tiza';
-  color: whitesmoke;
-  font-weight: 50;
-  font-size: 48px;
-  letter-spacing: -5px;
-}
-.title span {
-  white-space:pre;
-  opacity: 0;
-  transition: opacity 1s;
-}
-.title span.active {
-  opacity: 1;
-}
-
 nav {
   /* barra de navegacion */
   grid-area: menu;
@@ -108,7 +92,7 @@ ul.menu {
 } 
 
 
-#categorias {
+section.categoria {
   grid-area: categoria;
   background-color: antiquewhite;
   color: black;
@@ -146,12 +130,11 @@ section.palabra {
   #palabraACompletar span {
     font-family: 'tiza';
     vertical-align: bottom;
-    font-size: 3em;
+    font-size: 2em;
     /*border-bottom: 2px solid white;*/
     display: inline-block;
-    margin-right: 22px;
+    margin-right: 8px;
     width: 30px;
-    justify-content: center;
   }
 
 section.intentos {
@@ -159,13 +142,13 @@ section.intentos {
     grid-area: intentos;
     text-align: center;
     font-family: 'tiza';
-    padding-top:20px;
   }
 
 section.teclado {
   /* teclado */
   grid-area: teclado;
   height: auto;
+  padding: 20px 30% 20px 30%;
   text-align:center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra teclado*/
 }
