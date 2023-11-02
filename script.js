@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function empezarJuego(categorias) {
+    const mensajeContainer = id('mensajeContainer');
+  
+  // Ocultamos el contenedor de mensajes al empezar un nuevo juego
+  mensajeContainer.style.display = 'none';
+
     botonJugar.disabled = true;
 
     deshabilitarTeclado(false);
@@ -51,16 +56,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function finalizarJuego() {
-    /* const mensajeFinalElemento = document.createElement('p');
-    mensajeFinalElemento.textContent = '¡Juego terminado!';
-    console.log(mensajeFinalElemento)
-    id('mensajeContainer').appendChild(mensajeFinalElemento); */
+
+
+
+
+
+  function finalizarJuego(ganador) {
+    const mensajeContainer = id('mensajeContainer');
+    mensajeContainer.innerHTML = '';
+  
+    const mensajeFinalElemento = document.createElement('p');
+    if (ganador) {
+      mensajeFinalElemento.textContent = '¡Felicidades, has ganado! 🥳';
+    } else {
+      mensajeFinalElemento.textContent = '¡Has perdido! Inténtalo de nuevo.😞';
+    }
+  
+    mensajeContainer.appendChild(mensajeFinalElemento);
+    mensajeContainer.style.display = 'block';
+  
     deshabilitarTeclado(true);
     botonJugar.disabled = false;
   }
 
-  function manejarClicCategoria(event) {//funcionalidad categoria
+  
+
+
+
+
+  function manejarClicCategoria(event){//funcionalidad categoria
     const categoriaSeleccionada = event.target.getAttribute("data-categoria");
     empezarJuego(categoriaSeleccionada);
   }
@@ -90,16 +114,18 @@ document.addEventListener("DOMContentLoaded", function () {
           break;
         }
       }
-      if (completa)
-      finalizarJuego();
-
+      if (completa) {
+        finalizarJuego(true); // Has ganado
+      }
     } else {
       intentosRestantes--;
       intentosRestantesElement.textContent = intentosRestantes;
       imagen.src = `assets/imagenes/Img${6 - intentosRestantes}.png`;
-      if (intentosRestantes == 0)
-        finalizarJuego();
+      if (intentosRestantes == 0) {
+        finalizarJuego(false); // Has perdido
+      }
     }
+    
   }
   
   botonJugar.addEventListener("click", empezarJuego);
