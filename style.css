@@ -30,7 +30,7 @@ main {
   "intentos"
   "teclado"
   "footer";
-  grid-template-rows: 6rem 8.5rem 2rem 30rem  4rem auto 3rem;
+  grid-template-rows: 6rem 9.5rem 2rem 30rem  4rem auto 3rem;
 
 }
 
@@ -68,9 +68,7 @@ ul.menu {
   flex-direction: row;
   justify-content: space-around;
   list-style: none;
-  padding-top: 1rem;
   font-family: 'tiza';
-
 }
 
 
@@ -78,7 +76,6 @@ ul.menu {
   font-family: "tiza";
   font-size:15px;
   color: white;
-  padding: 20px 10px 20px 10px;
   width: 200px;
   border: none;
   background-color: lightblue;
