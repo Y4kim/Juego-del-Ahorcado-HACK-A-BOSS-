@@ -136,7 +136,7 @@ section.palabra {
     font-family: 'tiza';
     vertical-align: bottom;
     font-size: 2em;
-    border-bottom: 2px solid white;
+    /*border-bottom: 2px solid white;*/
     display: inline-block;
     margin-right: 8px;
     width: 30px;
