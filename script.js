@@ -5,11 +5,70 @@ document.addEventListener("DOMContentLoaded", function () {
   let intentosRestantes = 6;
 
   const arrayPalabras = [
-    "gato",
-    "cocodrilo",
-    // ... (otras palabras)
-    "esperanza",
-    "sueño",
+    "gato", 
+  "cocodrilo", 
+  "elefante", 
+  "jirafa", 
+  "leon",
+  "manzana",
+  "verdura" ,
+  "hola",
+  "adios" ,
+  "mañana",
+  "temprano",
+  "luego",
+  "camion",
+  "eterno",
+  "perro",
+  "simbolo",
+  "tractor",
+  "emergencia",
+  "hospital",
+  "artista",
+  "aduana",
+  "siempre",
+  "nunca",
+  "cargador",
+  "telefono",
+  "perro",
+  "gato",
+  "casa",
+  "coche",
+  "amarillo",
+  "azul",
+  "pelota",
+  "jardin",
+  "computadora",
+  "montaña",
+  "playa",
+  "ciudad",
+  "libro",
+  "escuela",
+  "trabajo",
+  "feliz",
+  "triste",
+  "risa",
+  "llanto",
+  "verde",
+  "rojo",
+  "nube",
+  "sol",
+  "luz",
+  "oscuridad",
+  "pintura",
+  "musica",
+  "bailar",
+  "cantar",
+  "avion",
+  "viaje",
+  "comida",
+  "bebida",
+  "familia",
+  "amigo",
+  "amor",
+  "odio",
+  "esperanza",
+  "sueño",
   ];
 
   function id(str) {
@@ -52,8 +111,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function finalizarJuego() {
+    const mensajeFinalElemento = document.createElement('p');
+    mensajeFinalElemento.textContent = '¡Juego terminado!';
+    console.log(mensajeFinalElemento)
+    id('mensajeContainer').appendChild(mensajeFinalElemento);
+
     deshabilitarTeclado(true);
     botonJugar.disabled = false;
+    
   }
 
   function manejarClicLetra(evento) {
