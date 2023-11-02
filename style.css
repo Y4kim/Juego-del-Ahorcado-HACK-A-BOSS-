@@ -77,12 +77,12 @@ nav {
   text-align: center;
   padding:20px;
 }
-ul.menu {
+div.menu {
   /* Barra de navegacion */
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  list-style: none;
+
+  justify-content: center;
+  align-items:center;
   font-family: 'tiza';
 }
 
@@ -117,6 +117,20 @@ ul.menu {
   color: black;
   text-align: center;
   font-family: 'tiza';
+}
+select {
+  font-family: "tiza";
+  font-size:15px;
+  color: white;
+  padding:20px;
+  border: none;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+
+select:focus {
+  outline: none;
+  border-color: lightsalmon;
 }
 
 figure.dibujo {

@@ -39,9 +39,14 @@
       </header>
       <nav>
         <p class="subtitulo">Para empezar a jugar, escoje una categoria</p>
-         <ul class="menu">
-          <li><button  id="empiezaElJuego">Empezar a jugar</button></li>
-        </ul>
+         <div class="menu">
+          <button  id="empiezaElJuego">Empezar a jugar</button>
+            <select id="desplegableCategorias" name="opciones">
+              <option id="desplegableCategorias" value="opcion1">Animales 🦊</option>
+              <option id="desplegableCategorias" value="opcion2">Frutas 🍍</option>
+              <option id="desplegableCategorias" value="opcion3">Paises 🇦🇺</option>
+          </select>
+        </div>
       </nav>
 
       <div id="categorias">
@@ -49,12 +54,6 @@
         <button data-categoria="frutas">Frutas</button>
         <button data-categoria="paises">Paises</button>
 
-        <label for="opciones">Para empezar a jugar, escoje una categoria:</label>
-            <select id="desplegableCategorias" name="opciones">
-                <option id="desplegableCategorias" value="opcion1">Animales 🦊</option>
-                <option id="desplegableCategorias" value="opcion2">Frutas 🍍</option>
-                <option id="desplegableCategorias" value="opcion3">Paises 🇦🇺</option>
-            </select>
       </div>
 
       <section id="fondoPizarra">
