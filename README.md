@@ -11,11 +11,14 @@ tareas pendientes:
     - Hacer qeu la página no haga scroll.
     - Botón que diga si hemos ganado o perdido y de opción de inicializar el juego.
     - Responsive.
+    - Ver por qué el teclado no se queda como nos gustaría.
+    - Guiones del juego más grandes.
 
 ideas:
     - Nuevo nombre "Letras en la Cuerda" => Ana
     - Un muñeco del ahorcado tirando de las letras con una cuerda.
     - Titulo caer letras desde arriba (y botando)
+    - Crear categorias en desplegable
     
 
 
