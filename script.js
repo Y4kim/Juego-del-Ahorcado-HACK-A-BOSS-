@@ -4,72 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let palabraSecreta;
   let intentosRestantes = 6;
 
-  const arrayPalabras = [
-    "gato", 
-  "cocodrilo", 
-  "elefante", 
-  "jirafa", 
-  "leon",
-  "manzana",
-  "verdura" ,
-  "hola",
-  "adios" ,
-  "mañana",
-  "temprano",
-  "luego",
-  "camion",
-  "eterno",
-  "perro",
-  "simbolo",
-  "tractor",
-  "emergencia",
-  "hospital",
-  "artista",
-  "aduana",
-  "siempre",
-  "nunca",
-  "cargador",
-  "telefono",
-  "perro",
-  "gato",
-  "casa",
-  "coche",
-  "amarillo",
-  "azul",
-  "pelota",
-  "jardin",
-  "computadora",
-  "montaña",
-  "playa",
-  "ciudad",
-  "libro",
-  "escuela",
-  "trabajo",
-  "feliz",
-  "triste",
-  "risa",
-  "llanto",
-  "verde",
-  "rojo",
-  "nube",
-  "sol",
-  "luz",
-  "oscuridad",
-  "pintura",
-  "musica",
-  "bailar",
-  "cantar",
-  "avion",
-  "viaje",
-  "comida",
-  "bebida",
-  "familia",
-  "amigo",
-  "amor",
-  "odio",
-  "esperanza",
-  "sueño",
-  ];
+  const arrayCategorias = {//creamos objeto de arrays con categorias
+    animales: ["gato", "perro",],
+    frutas: ["manzana", "platano"],
+    paises: ["españa", "francia"]
+  };
 
   function id(str) {
     return document.getElementById(str);
@@ -77,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let intentosRestantesElement = id("intentosRestantes");
   const botonJugar = id("empiezaElJuego");
+  const botonCategorias = document.querySelectorAll("#categorias button");//añadimos los botónes del div.ID CATGEORIAS
   const botonLetra = document.querySelectorAll("#letras button");
   const imagen = id("ahorcado");
   
@@ -86,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function empezarJuego() {
+  function empezarJuego(categorias) {
     botonJugar.disabled = true;
 
     deshabilitarTeclado(false);
@@ -97,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const parrafo = id("palabraACompletar");
     parrafo.innerHTML = "";
 
-    palabraSecreta = arrayPalabras[Math.floor(Math.random() * arrayPalabras.length)].toLowerCase();
+    const palabraArrayCategoria = arrayCategorias[categorias];//declaramos variable para la palabra seleccionada aleatoriamente
+    palabraSecreta = palabraArrayCategoria[Math.floor(Math.random() * palabraArrayCategoria.length)].toLowerCase();
     console.log(`La palabra que el sistema ha escogido de manera aleatoria es: ${palabraSecreta}`);
 
     const letrasPalabraAJugar = palabraSecreta.length;
@@ -115,15 +56,18 @@ document.addEventListener("DOMContentLoaded", function () {
     mensajeFinalElemento.textContent = '¡Juego terminado!';
     console.log(mensajeFinalElemento)
     id('mensajeContainer').appendChild(mensajeFinalElemento);
-
     deshabilitarTeclado(true);
     botonJugar.disabled = false;
-    
   }
 
-  function manejarClicLetra(evento) {
+  function manejarClicCategoria(event) {//funcionalidad categoria
+    const categoriaSeleccionada = event.target.getAttribute("data-categoria");
+    empezarJuego(categoriaSeleccionada);
+  }
+
+  function manejarClicLetra(event) {
     const spans = document.querySelectorAll("#palabraACompletar span");
-    const botonLetraApretada = evento.target;
+    const botonLetraApretada = event.target;
     botonLetraApretada.disabled = true;
     console.log(`La letra apretada es: ${botonLetraApretada}`);
 
@@ -148,8 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (completa)
       finalizarJuego();
-    }
-    else {
+
+    } else {
       intentosRestantes--;
       intentosRestantesElement.textContent = intentosRestantes;
       imagen.src = `assets/imagenes/Img${6 - intentosRestantes}.png`;
@@ -163,6 +107,32 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let i = 0; i < botonLetra.length; i++) {
     botonLetra[i].addEventListener("click", manejarClicLetra);
   }
+
+  for (let i = 0; i < botonCategorias.length; i++) {
+    botonCategorias[i].addEventListener("click", manejarClicCategoria);
+  }
   
   deshabilitarTeclado(true);
 });
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+}
+
+let spanTexts = document.getElementsByTagName("span");
+window.onload = function() {
+  let indices = Array.from(Array(spanTexts.length).keys());
+  shuffleArray(indices);
+  let delay = 1.0;
+  for (let i of indices)
+  {
+      spanTexts[i].style.transitionDelay = delay.toString() + "s";
+      spanTexts[i].classList.add("active");
+      delay += 0.5;
+  }
+}
