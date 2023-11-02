@@ -52,10 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function finalizarJuego() {
-    const mensajeFinalElemento = document.createElement('p');
+    /* const mensajeFinalElemento = document.createElement('p');
     mensajeFinalElemento.textContent = '¡Juego terminado!';
     console.log(mensajeFinalElemento)
-    id('mensajeContainer').appendChild(mensajeFinalElemento);
+    id('mensajeContainer').appendChild(mensajeFinalElemento); */
     deshabilitarTeclado(true);
     botonJugar.disabled = false;
   }
