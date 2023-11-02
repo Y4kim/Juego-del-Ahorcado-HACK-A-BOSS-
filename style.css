@@ -80,12 +80,10 @@ nav {
 div.menu {
   /* Barra de navegacion */
   display: flex;
-
   justify-content: center;
   align-items:center;
   font-family: 'tiza';
 }
-
 
 #empiezaElJuego {
   font-family: "tiza";
@@ -96,7 +94,23 @@ div.menu {
   background-color: lightblue;
   border-radius: 5px;
 }
-
+.botonCategoria{
+  font-family: "tiza";
+  font-size:15px;
+  color: white;
+  width: 100px;
+  border: none;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+.botonCategoria:hover {
+  font-family: "tiza";
+  font-size:15px;
+  color: white;
+  border: none;
+  background-color: lightsalmon;
+  border-radius: 5px;
+} 
 #empiezaElJuego:hover {
   font-family: "tiza";
   font-size:15px;
