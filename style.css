@@ -267,12 +267,12 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    vertical-align: center;
+  }
+  footer p {
     font-family: 'solid';
     font-size: 12px;
     letter-spacing: 2px;
     color: aliceblue;
-
   }
   button {
     /* teclado */
