@@ -147,6 +147,25 @@ select:focus {
   border-color: lightsalmon;
 }
 
+#mensajeContainer {
+  background-color: black; 
+
+}
+#mensajeContainer button {
+  background-color: black; 
+  color: white; 
+  width: 200px;
+  padding: 10px 20px 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 5px; 
+}
+
+
+#mensajeContainer button:hover {
+  background-color: grey; 
+}
+
 figure.dibujo {
   grid-area: dibujo;
   text-align: center;

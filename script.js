@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const botonCategorias = document.querySelectorAll("#categorias button");//añadimos los botónes del div.ID CATGEORIAS
   const botonLetra = document.querySelectorAll("#letras button");
   const imagen = id("ahorcado");
+  const botonReiniciar = document.createElement('button');
+
   
   function deshabilitarTeclado(disable) {
     for (let i = 0; i < botonLetra.length; i++) {
@@ -76,13 +78,23 @@ document.addEventListener("DOMContentLoaded", function () {
     mensajeContainer.style.display = 'block';
   
     deshabilitarTeclado(true);
+
     botonJugar.disabled = false;
+    // Añadir un botón para reiniciar el juego
+    botonReiniciar.textContent = 'Reiniciar Juego';
+    botonReiniciar.addEventListener('click', function () {
+      deshabilitarTeclado(true);
+    // Llamada a la función para reiniciar el juego
+    empezarJuego();
+    // Ocultar el mensajeContainer
+    mensajeContainer.style.display = 'none';
+  });
+
+  mensajeContainer.appendChild(botonReiniciar);
+  
   }
 
   
-
-
-
 
   function manejarClicCategoria(event){//funcionalidad categoria
     const categoriaSeleccionada = event.target.getAttribute("data-categoria");
