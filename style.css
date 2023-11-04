@@ -89,7 +89,13 @@ div.menu {
   align-items:center;
   font-family: 'tiza';
 }
-
+div.menu {
+  /* Barra de navegacion */
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  font-family: 'tiza';
+}
  #empiezaElJuego {
   display:flex;
   align-items: center;
