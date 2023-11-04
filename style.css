@@ -16,9 +16,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
 }
 
 main {
+  background-image: url(assets/imagenes/pizarra02.jpg);
+  background-size: cover;
   min-height: 100vh;
   display: grid;
   grid-template-areas:
@@ -39,7 +42,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
 
 }
 
@@ -68,7 +70,6 @@ header h1{
 nav {
   /* barra de navegacion */
   grid-area: menu;
-  background-color: bisque;
   list-style: none;
   font-family: 'tiza';
 }
@@ -76,6 +77,7 @@ nav {
 .subtitulo{
   text-align: center;
   padding:20px;
+  color: aliceblue;
 }
 div.menu {
   /* Barra de navegacion */
@@ -85,41 +87,39 @@ div.menu {
   font-family: 'tiza';
 }
 
-#empiezaElJuego {
+ #empiezaElJuego {
   font-family: "tiza";
   font-size:15px;
-  color: white;
+  color: aliceblue;
+  background-color: black;
   width: 200px;
   border: none;
-  background-color: lightblue;
   border-radius: 5px;
 }
+
 .botonCategoria{
   font-family: "tiza";
   font-size:15px;
-  color: white;
+  color: aliceblue;
+  background-color: black;
   width: 100px;
   border: none;
-  background-color: lightblue;
   border-radius: 5px;
 }
+
 .botonCategoria:hover {
   font-family: "tiza";
   font-size:15px;
-  color: white;
   border: none;
-  background-color: lightsalmon;
-  border-radius: 5px;
-} 
-#empiezaElJuego:hover {
-  font-family: "tiza";
-  font-size:15px;
-  color: white;
-  border: none;
-  background-color: lightsalmon;
   border-radius: 5px;
 } 
 
+#empiezaElJuego:hover {
+  font-family: "tiza";
+  font-size:15px;
+  border: none;
+  border-radius: 5px;
+} 
 
 #categorias {
   grid-area: categoria;
@@ -127,18 +127,18 @@ div.menu {
   justify-content: center;
   align-items: center;
   vertical-align: center;
-  background-color: antiquewhite;
   color: black;
   text-align: center;
   font-family: 'tiza';
 }
-select {
+
+select {/*desplegable*/
   font-family: "tiza";
   font-size:15px;
-  color: white;
+  color: aliceblue;
+  background-color: black;
   padding:20px;
   border: none;
-  background-color: lightblue;
   border-radius: 5px;
 }
 
@@ -153,28 +153,26 @@ figure.dibujo {
   background-size: cover;
   font-family: 'tiza';
 }
+
 #ahorcado{
   margin: 40px;
   width: 300px;
 }
 
-#fondoPizarra{
-  background-image: url(assets/imagenes/pizarra02.jpg);
-}
 section.palabra {
-  background-color: antiquewhite;
   grid-area: palabra;
   text-align: center;
   font-family: 'tiza';
 }
 
 #palabraACompletar{
-  color:white;
+  color:aliceblue;
   font-family: 'tiza';
   text-align: center;
-  
   }
-  #palabraACompletar span {
+
+
+#palabraACompletar span {
     font-family: 'tiza';
     vertical-align: bottom;
     font-size: 3em;
@@ -185,15 +183,14 @@ section.palabra {
   }
 
 section.intentos {
-    background-color: antiquewhite;
     grid-area: intentos;
     text-align: center;
     font-family: 'tiza';
     padding-top:20px;
+    color: aliceblue;
   }
 
   #mensajeContainer{
-   background-color: red;
    color:white;
    position: fixed;
   top: 50%;
@@ -229,7 +226,6 @@ footer {
   grid-area: footer;
   color: aliceblue;
   justify-content: center;
-  background-color: black;
   width: 100%;
   display: flex;
   flex-direction: row;
