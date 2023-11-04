@@ -5,9 +5,38 @@ document.addEventListener("DOMContentLoaded", function () {
   let intentosRestantes = 6;
 
   const arrayCategorias = [ //creamos un array de arrays con las palabras de cada categoria
-    ["gato", "perro"], // Animales
-    ["manzana", "platano"], // Frutas
-    ["españa", "francia"] // Países 
+    ["gato", "perro", "liebre", "pájaro", "rinoceronte", "camello", "lobo", "topo", "oveja", "cerdo", "iguana", "bufalo", "gusano", "mapache", "alce", "escorpion", "elefante", "dromedario", "venado", "oso", "foca", "calamar", "delfin", "ballena", "medusa", "gamba", "sepia", "pulpo", "trucha", "caracol", "tiburon", "carpa", "salmon", "tortuga", "pinguino", "orca", "tigre", "leopardo", "pantera", "rata", "avestruz", "gorila", "mono", "ganso", "serpiente", "cocodrilo", "gallo", "anaconda", "caballo", "vaca", "mandril", "koala", "canguro", "jirafa", "leon", "ardilla", "hormiga", "toro", "castor", "hamster", "caiman", "asno" ], // Animales
+    ["arandano",
+    "frambuesa",
+    "fresa",
+    "grosella", 
+     "limon",
+     "naranja", 
+     "pomelo",
+     "mandarina", 
+     "melon",
+     "sandia",
+     "aguacate",
+     "chirimoya",
+     "kiwi",
+     "mango",
+     "coco",
+     "papaya",
+     "platano",
+     "piña",
+     "cereza",
+     "albaricoque",
+     "manzana",
+     "nispero",
+     "ciruela",
+     "higo",
+     "melocoton",
+     "nectarina",
+     "pera",
+     "uva"
+      ], // Frutas
+    ["españa", "francia", "afganistán","armenia","azerbaiján", "Bahrein", "Bangladesh", "brunei","bután", "Filipinas","Georgia", "India", "indonesia", "Irán", "Iraq", "Israel", "Japón", "jordania", "Kampuchea", "Kazakstán", "kirguizistán","Kuwait", "Laos", "Líbano", "malasia","Maldivas", "Mongolia", "Myanmar", "nepal", "Omán", "Pakistán", "Palestina", "qatar", "Singapur", "Sri Lanka", "Siria", "tadjikistán", "Tailandia", "Turkmenistán", "Türkiye", "Vietnam", "Yemen", "albania", "alemania", "andorra", "austria", "belgica", "bielorusia", "bulgaria", "chipre", "croacia", "dinamarca", "eslovaquia", "finlandia", "estonia", "grecia", "holanda", "hungria", "italia", "irlanda", "italia", "islandia", "letonia", "lituania", "luxemburgo", "moldavia", "malta", "monaco", "noruega", "polonia", "portugal", "rumania", "rusia", "suiza", "suecia", "ucraina", "canada", "cuba", "bahamas", "mexico", "panama", "argentina", "brasil", "uruguay", "paraguay", "chile", "peru", "ecuador", "colombia", "bolivia", "australia", "fiji", "samoa", "angola", "marruecos", "tanzania", "uganda", "nigeria", "libia",
+  ] // Países 
   ];
 
   function id(str) {
