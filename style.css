@@ -115,6 +115,7 @@ div.menu {
 select {/*desplegable*/
   font-family: "tiza";
   font-size:15px;
+  text-align: center;
   color: aliceblue;
   background-color: black;
   padding:20px;
