@@ -210,6 +210,7 @@ section.teclado {
   grid-area: teclado;
   height: auto;
   text-align:center;
+  padding-bottom:20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra teclado*/
 }
 
@@ -217,8 +218,8 @@ section.teclado {
 button {
   /* teclado */
   margin: 0.1rem;
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border: none;
   border-radius: 0.2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra teclado*/
