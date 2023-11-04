@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function deshabilitarTeclado(disable) {
     for (let i = 0; i < botonLetra.length; i++) {
       botonLetra[i].disabled = disable;
+      botonLetra[i].style.color = "#000000"
     }
   }
 
@@ -110,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (acierto) {
+      botonLetraApretada.style.color = "#00FF00";
       let completa = true;
       for (let i = 0; i < palabra.length; i++) {
         if (spans[i].innerHTML != palabra[i]) {
@@ -121,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
         finalizarJuego(true); // Has ganado
       }
     } else {
+      botonLetraApretada.style.color = "#ff001e";
       intentosRestantes--;
       intentosRestantesElement.textContent = intentosRestantes;
       imagen.src = `assets/imagenes/Img${6 - intentosRestantes}.png`;
