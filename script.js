@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let palabraSecreta;
   let intentosRestantes = 6;
 
-  const arrayCategorias = {//creamos objeto de arrays con categorias
-    animales: ["gato", "perro",],
-    frutas: ["manzana", "platano"],
-    paises: ["españa", "francia"]
-  };
+  const arrayCategorias = [ //creamos un array de arrays con las palabras de cada categoria
+    ["gato", "perro"], // Animales
+    ["manzana", "platano"], // Frutas
+    ["españa", "francia"] // Países 
+  ];
 
   function id(str) {
     return document.getElementById(str);
@@ -21,30 +21,35 @@ document.addEventListener("DOMContentLoaded", function () {
   const imagen = id("ahorcado");
   const botonReiniciar = document.createElement('button');
 
-  
   function deshabilitarTeclado(disable) {
     for (let i = 0; i < botonLetra.length; i++) {
       botonLetra[i].disabled = disable;
     }
   }
 
-  function empezarJuego(categorias) {
+  function empezarJuego() {
     const mensajeContainer = id('mensajeContainer');
   
   // Ocultamos el contenedor de mensajes al empezar un nuevo juego
-  mensajeContainer.style.display = 'none';
+    mensajeContainer.style.display = 'none';
 
     botonJugar.disabled = true;
 
+    // Habilitamos teclado y reiniciamos contador e imagen
     deshabilitarTeclado(false);
     intentosRestantes = 6;
     intentosRestantesElement.textContent = intentosRestantes;
     imagen.src = `assets/imagenes/Img0.png`;
 
+    // Obtenemoos la categoría seleccionada
+    let categorias = id("desplegableCategorias");
+    let categoria = categorias.value;
+    console.log(`Seleccionada la categoría ${categorias.options[categorias.selectedIndex].text} (${categoria})`);
+
     const parrafo = id("palabraACompletar");
     parrafo.innerHTML = "";
 
-    const palabraArrayCategoria = arrayCategorias[categorias];//declaramos variable para la palabra seleccionada aleatoriamente
+    const palabraArrayCategoria = arrayCategorias[categoria];//declaramos variable para la palabra seleccionada aleatoriamente
     palabraSecreta = palabraArrayCategoria[Math.floor(Math.random() * palabraArrayCategoria.length)].toLowerCase();
     console.log(`La palabra que el sistema ha escogido de manera aleatoria es: ${palabraSecreta}`);
 
@@ -57,11 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
       parrafo.appendChild(span);
     }
   }
-
-
-
-
-
 
   function finalizarJuego(ganador) {
     const mensajeContainer = id('mensajeContainer');
@@ -84,21 +84,12 @@ document.addEventListener("DOMContentLoaded", function () {
     botonReiniciar.textContent = 'Reiniciar Juego';
     botonReiniciar.addEventListener('click', function () {
       deshabilitarTeclado(true);
-    // Llamada a la función para reiniciar el juego
-    empezarJuego();
+   
     // Ocultar el mensajeContainer
     mensajeContainer.style.display = 'none';
   });
 
   mensajeContainer.appendChild(botonReiniciar);
-  
-  }
-
-  
-
-  function manejarClicCategoria(event){//funcionalidad categoria
-    const categoriaSeleccionada = event.target.getAttribute("data-categoria");
-    empezarJuego(categoriaSeleccionada);
   }
 
   function manejarClicLetra(event) {
@@ -144,10 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   for (let i = 0; i < botonLetra.length; i++) {
     botonLetra[i].addEventListener("click", manejarClicLetra);
-  }
-
-  for (let i = 0; i < botonCategorias.length; i++) {
-    botonCategorias[i].addEventListener("click", manejarClicCategoria);
   }
   
   deshabilitarTeclado(true);

@@ -97,22 +97,6 @@ div.menu {
   border-radius: 5px;
 }
 
-.botonCategoria{
-  font-family: "tiza";
-  font-size:15px;
-  color: aliceblue;
-  background-color: black;
-  width: 100px;
-  border: none;
-  border-radius: 5px;
-}
-
-.botonCategoria:hover {
-  font-family: "tiza";
-  font-size:15px;
-  border: none;
-  border-radius: 5px;
-} 
 
 #empiezaElJuego:hover {
   font-family: "tiza";
