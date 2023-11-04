@@ -27,12 +27,11 @@ main {
   grid-template-areas:
   "titulo"
   "menu"
-  "categoria"
   "dibujo"
   "intentos"
   "teclado"
   "footer";
-  grid-template-rows: 6rem 9.5rem 5rem 30rem  4rem auto 3rem;
+  grid-template-rows: 6rem 9.5rem  25rem 4rem auto 3rem;
 
 }
 
@@ -55,8 +54,8 @@ header h1{
   font-family: 'tiza';
   color: whitesmoke;
   font-weight: 50;
-  font-size: 48px;
-  letter-spacing: -5px;
+  font-size: 30px;
+  letter-spacing: -2px;
 }
 .title span {
   white-space:pre;
@@ -76,6 +75,8 @@ nav {
 
 .subtitulo{
   text-align: center;
+  font-size: 15px;
+  letter-spacing:2px;
   padding:20px;
   color: aliceblue;
 }
@@ -158,8 +159,8 @@ figure.dibujo {
 }
 
 #ahorcado{
-  margin: 40px;
-  width: 300px;
+  margin: 20px;
+  width: 250px;
 }
 
 section.palabra {
@@ -189,20 +190,22 @@ section.intentos {
     grid-area: intentos;
     text-align: center;
     font-family: 'tiza';
+    font-size:15px;
+    letter-spacing: 4px;
     padding-top:20px;
     color: aliceblue;
   }
 
   #mensajeContainer{
-   color:white;
-   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 100px;
-  text-align: center;
-  z-index: 1000; /* Aseguramos que esté por encima de otros elementos */
-  display: none; /* Lo escondemos al iniciar */
+    color:white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 100px;
+    text-align: center;
+    z-index: 1000; 
+    display: none; 
   }
 
 section.teclado {
@@ -228,9 +231,52 @@ button {
 footer {
   grid-area: footer;
   color: aliceblue;
-  justify-content: center;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   font-family: 'solid';
+  font-size:10px;
+}
+
+@media (min-width: 600px) {
+  .title {
+    font-family: 'tiza';
+    color: whitesmoke;
+    font-weight: 50;
+    font-size: 50px;
+    letter-spacing: -5px;
+  }
+  footer {
+    grid-area: footer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
+    font-family: 'solid';
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: aliceblue;
+
+  }
+  button {
+    /* teclado */
+    margin: 0.3rem;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra teclado*/
+    font-family: "solid"; 
+  }
+  section.intentos {
+    grid-area: intentos;
+    text-align: center;
+    font-family: 'tiza';
+    font-size:20px;
+    letter-spacing: 4px;
+   
+    color: aliceblue;
+  }
 }
