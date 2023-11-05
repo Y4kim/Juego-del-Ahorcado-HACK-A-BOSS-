@@ -288,6 +288,10 @@ button {
   font-family: "solid"; 
 }
 
+button:disabled{
+  background-color: rgba(161, 161, 161, 0.16);
+}
+
 footer {
   grid-area: footer;
   color: aliceblue;
