@@ -112,14 +112,19 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: black;
-  padding: 20px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  padding: 30px;
+  height: 300px;
+  width: 250px;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   color: whitesmoke;
   font-family: "solid";
-  font-weight: 20;
-  font-size: 14px;
-  font-weight: 100;
+  font-size: 11px;
+  text-align:center;
   line-height: 2;
   letter-spacing:2px;
 }
@@ -342,4 +347,26 @@ footer {
     color: aliceblue;
   }
 
+
+  .modal-contenido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+    width:600px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    color: whitesmoke;
+    font-family: "solid";
+    font-size: 15px;
+    text-align:center;
+    line-height: 2;
+    letter-spacing:2px;
+  }
 }
