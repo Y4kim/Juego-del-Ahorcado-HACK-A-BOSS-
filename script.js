@@ -561,6 +561,6 @@ window.onload = function() {
   {
       spanTexts[i].style.transitionDelay = delay.toString() + "s";
       spanTexts[i].classList.add("active");
-      delay += 0.5;
+      delay += 0.3;
   }
 }
