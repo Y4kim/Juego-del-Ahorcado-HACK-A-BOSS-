@@ -479,6 +479,12 @@ document.addEventListener("DOMContentLoaded", function () {
     mensajeContainer.style.display = 'block';
   
     deshabilitarTeclado(true);
+    intentosRestantes = 6;
+    intentosRestantesElement.textContent = intentosRestantes;
+    imagen.src = `assets/imagenes/Img0.png`;
+    const parrafo = id("palabraACompletar");
+    parrafo.innerHTML = "";
+
 
     botonJugar.disabled = false;
     // Añadir un botón para reiniciar el juego
