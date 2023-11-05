@@ -35,7 +35,6 @@ main {
 
 }
 
-
 header {
   grid-area: titulo;
   display: flex;
@@ -58,11 +57,13 @@ header h1{
   font-size: 22px;
   letter-spacing: -1px;
 }
+
 .title span {
   white-space:pre;
   opacity: 0;
   transition: opacity 1s;
 }
+
 .title span.active {
   opacity: 1;
 }
@@ -136,6 +137,7 @@ select:focus {
   background-color: black; 
 
 }
+
 #mensajeContainer button {
   background-color: black; 
   color: white; 
@@ -203,7 +205,7 @@ section.intentos {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 100px;
+    padding: 100%;
     text-align: center;
     z-index: 1000; 
     display: none; 
@@ -287,4 +289,5 @@ footer {
     letter-spacing: 4px;
     color: aliceblue;
   }
+
 }
