@@ -113,6 +113,9 @@ div.menu {
 } 
 
 select {/*desplegable*/
+  display:flex;
+  justify-content: center;
+  align-items: center;
   font-family: "tiza";
   font-size:15px;
   text-align: center;
