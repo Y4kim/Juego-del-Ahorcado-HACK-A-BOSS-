@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
      "Volleyball",
      "Pesca",
     ],
-    
+
     //Comidas
     [
     "Pizza",
@@ -538,10 +538,11 @@ document.addEventListener("DOMContentLoaded", function () {
   
     const mensajeFinalElemento = document.createElement('p');
     if (ganador) {
-      mensajeFinalElemento.textContent = '¡Felicidades, has ganado! 🥳';
+      mensajeFinalElemento.innerHTML = '¡Felicidades, has ganado! 🥳';
     } else {
-      mensajeFinalElemento.textContent = '¡Has perdido! Inténtalo de nuevo.😞';
+      mensajeFinalElemento.innerHTML = '¡Has perdido! Inténtalo de nuevo.😞';
     }
+    mensajeFinalElemento.innerHTML += `<br /><br />La palabra es ${palabraSecreta}`;
   
     mensajeContainer.appendChild(mensajeFinalElemento);
     mensajeContainer.style.display = 'block';
