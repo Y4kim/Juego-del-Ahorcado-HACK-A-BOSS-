@@ -245,6 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
      "Volleyball",
      "Pesca",
     ],
+    
     //Comidas
     [
     "Pizza",
@@ -636,26 +637,28 @@ window.onload = function() {
       spanTexts[i].classList.add("active");
       delay += 0.3;
   }
-}
 
-// Obtener elementos HTML
+
+// Obtiene elementos HTML
 const mostrarModalBtn = document.getElementById("mostrarModal");
 const modal = document.getElementById("modal");
 const cerrarModalBtn = document.getElementById("cerrarModal");
 
-// Mostrar el mensaje emergente al hacer clic en el botón
+// Muestra el mensaje emergente al hacer clic en el botón
 mostrarModalBtn.addEventListener("click", function() {
     modal.style.display = "block";
 });
 
-// Cerrar el mensaje emergente al hacer clic en el botón de cierre
+// Cierra el mensaje emergente al hacer clic en el botón de cierre
 cerrarModalBtn.addEventListener("click", function() {
     modal.style.display = "none";
 });
 
-// Cerrar el mensaje emergente al hacer clic fuera del contenido del mensaje
+// Cierra el mensaje emergente al hacer clic fuera del contenido del mensaje
 window.addEventListener("click", function(event) {
     if (event.target === modal) {
         modal.style.display = "none";
     }
 });
+
+}
