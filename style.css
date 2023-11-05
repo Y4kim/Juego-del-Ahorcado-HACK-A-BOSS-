@@ -59,13 +59,16 @@ header h1{
 }
 
 .title span {
-  white-space:pre;
+  white-space: pre;
   opacity: 0;
-  transition: opacity 1s;
+  display: inline-block;
+  transform: translateY(-100px);
+  transition: transform 1s, opacity 1s;
 }
 
 .title span.active {
   opacity: 1;
+  transform: translateY(0px);
 }
 
 nav {
