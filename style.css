@@ -89,7 +89,7 @@ nav {
   bottom: 0;
   right: 0;
   margin: 10px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color:rgba(0, 0, 0, 0.482);
   color:white;
   width: 200px;
   border: 1px solid white;
@@ -156,7 +156,7 @@ div.menu {
   font-size:15px;
   color: aliceblue;
   background-color: black;
-  width: 200px;
+  width: 300px;
   border: none;
   border-radius: 5px;
   padding:30px 0px 30px 0px;
@@ -180,7 +180,7 @@ select {/*desplegable*/
   color: aliceblue;
   background-color: black;
   padding:20px;
-  width: 200px;
+  width: 300px;
   border: none;
   border-radius: 5px;
 }
@@ -274,7 +274,6 @@ section.teclado {
   height: auto;
   text-align:center;
   padding-bottom:20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra teclado*/
 }
 
 
@@ -335,7 +334,7 @@ footer {
     height: 3rem;
     border: none;
     border-radius: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra teclado*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
     font-family: "solid"; 
   }
   section.intentos {
@@ -368,5 +367,16 @@ footer {
     text-align:center;
     line-height: 2;
     letter-spacing:2px;
+  }
+  
+  #mostrarModal {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    background-color:rgba(0, 0, 0, 0);
+    color:white;
+    width: 200px;
+    border: 1px solid white;
   }
 }
