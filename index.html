@@ -1,43 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Letras en la cuerda</title>
-    <link rel="icon" type="image/x-icon" href="/assets/imagenes/fav.png">
-    <link rel="stylesheet" href="style.css" />
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Letras en la cuerda</title> <!-- Título de la página en la barra de título del navegador -->
+    <link rel="icon" type="image/x-icon" href="assets/imagenes/fav.png"> <!-- Ícono de la página (favicon) -->
+    <link rel="stylesheet" href="style.css" /> <!-- Enlace a la hoja de estilo externa (CSS) -->
   </head>
-  <body>
-    <main>
-      <header>
-        <div id="modal" class="modal">
-            <div class="modal-contenido">
-                <span class="cerrar-modal" id="cerrarModal">&times;</span>
-                <p>Elige una categoría y pulsa en el botón para empezar a jugar. Selecciona las letras en el teclado inferior.
-                  Tienes un máximo de seis fallos para adivinar la palabra. ¿Aceptas el desafío?.
-                </p>
-            </div>
+  <body> 
+    <main> <!-- Contenedor principal de contenido -->
+      <header> <!-- Encabezado de la página -->
+        <div id="modal" class="modal"> <!-- Elemento de modal para las instrucciones del juego -->
+          <div class="modal-contenido"> <!-- Contenido del modal -->
+            <span class="cerrar-modal" id="cerrarModal">&times;</span> <!-- Botón para cerrar el modal (una 'X') -->
+            <p> <!-- Párrafo con instrucciones del juego -->
+              Elige una categoría y pulsa en el botón para empezar a jugar. Selecciona las letras en el teclado inferior.
+              Tienes un máximo de seis fallos para adivinar la palabra. ¿Aceptas el desafío?.
+            </p>
+          </div>
         </div>
-        <div class="title">
+        <div class="title"> <!-- Título principal del juego con letras individuales -->
+          <!-- Cada letra se representa con un elemento "span" para estilizarla individualmente -->
           <span>L</span>
           <span>e</span>
           <span>t</span>
           <span>r</span>
           <span>a</span>
           <span>s</span>
-
-          <span> </span>
-
+          <span> </span> <!-- Espacio -->
           <span>e</span>
           <span>n</span>
-
           <span> </span>
-
           <span>l</span>
           <span>a</span>
-
           <span> </span>
-
           <span>c</span>
           <span>u</span>
           <span>e</span>
@@ -46,16 +42,16 @@
           <span>a</span>
         </div>
       </header>
-      <nav>
-        <div class="menu">
-          <button id="mostrarModal">¿Cómo jugar?</button>
-          </div>
-          <div class="menu">
-          <p class="subtitulo">Para empezar a jugar, escoge una categoria:
-          </p>
+      <nav> <!-- Navegación y opciones de juego -->
+        <div class="menu"> <!-- Contenedor del botón "¿Cómo jugar?" -->
+          <button id="mostrarModal">¿Cómo jugar?</button> <!-- Botón para mostrar el modal de instrucciones -->
         </div>
-         <div class="menu">
-          <select id="desplegableCategorias" name="opciones">
+        <div class="menu">
+          <p class="subtitulo">Para empezar a jugar, escoge una categoría:</p> <!-- Subtítulo de las categorías -->
+        </div>
+        <div class="menu">
+          <select id="desplegableCategorias" name="opciones"> <!-- Menú desplegable de categorías -->
+            <!-- Opciones del menú desplegable con etiquetas y emojis -->
             <option value=0>Animales 🦊</option>
             <option value=1>Frutas 🍍</option>
             <option value=2>Paises 🇦🇺</option>
@@ -67,30 +63,30 @@
             <option value=8>Personajes famosos 😎</option>
             <option value=9>Películas 🎬</option>
           </select>
-          </div>
-          <div class="menu">
-          <button  id="empiezaElJuego">Empezar a jugar</button>
+        </div>
+        <div class="menu">
+          <button  id="empiezaElJuego">Empezar a jugar</button> <!-- Botón para comenzar el juego -->
         </div>
       </nav>
 
-      <section id="fondoPizarra">
-        <figure class="dibujo">
+      <section id="fondoPizarra"> <!-- Sección para el juego del ahorcado -->
+        <figure class="dibujo"> <!-- Figura que contiene la imagen del ahorcado -->
           <img
             src="assets/imagenes/Img0.png"
             alt="ahorcado"
             id="ahorcado"
           />
-          <div id="mensajeContainer"></div>
-
+          <div id="mensajeContainer"></div> <!-- Contenedor para mensajes relacionados con el juego -->
         </figure>
-        <p id="palabraACompletar"></p>
+        <p id="palabraACompletar"></p> <!-- Párrafo para mostrar la palabra a adivinar -->
       </section>
 
-      <section class="intentos">Intentos restantes: <span id="intentosRestantes">6</span>
+      <section class="intentos"> <!-- Sección para mostrar los intentos restantes -->
+        Intentos restantes: <span id="intentosRestantes">6</span>
       </section>
       
-      <section class="teclado" id="letras">
-        
+      <section class="teclado" id="letras"> <!-- Sección con el teclado de letras -->
+        <!-- Botones individuales para cada letra del teclado -->
         <div>
           <button>Q</button>
           <button>W</button>
@@ -125,11 +121,10 @@
           <button>M</button>
         </div>
       </section>
-      <footer>
+      <footer> <!-- Pie de página -->
         <p>Letras en la cuerda © 2023 Desarrollado por Toni, Ana, Hakim y Helena. Hack a Boss.</p>
       </footer>
-
     </main>
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Enlace al archivo de script JavaScript externo -->
   </body>
 </html>
