@@ -308,10 +308,6 @@ footer {
   grid-area: footer; /* Asigna el pie de página a la zona "footer" en el diseño de cuadrícula */
   color: aliceblue; /* Establece el color del texto en azul claro */
   width: 100%; /* Establece el ancho del pie de página al 100% del contenedor */
-  display: flex; /* Utiliza un diseño flexible para el contenido del pie de página */
-  justify-content: center; /* Centra horizontalmente el contenido del pie de página */
-  align-items: center; /* Centra verticalmente el contenido del pie de página */
-  vertical-align: center; /* Esto es innecesario, ya que no es una propiedad válida en CSS */
   font-family: 'solid'; /* Aplica la fuente personalizada 'solid' al contenido del pie de página */
   font-size: 10px; /* Establece el tamaño de fuente en 10 píxeles */
   text-align: center; /* Centra el texto horizontalmente en el pie de página */
@@ -319,6 +315,7 @@ footer {
   line-height: 2; /* Establece la altura de línea en 2 veces el tamaño de fuente, proporcionando un espaciado vertical adecuado */
   padding-left: 20px; /* Agrega un relleno de 20 píxeles en el lado izquierdo del pie de página */
   padding-right: 20px; /* Agrega un relleno de 20 píxeles en el lado derecho del pie de página */
+  padding-bottom: 2em;
 }
 
 @media (min-width: 600px) {
