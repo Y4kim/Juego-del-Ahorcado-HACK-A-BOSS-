@@ -572,25 +572,26 @@ function finalizarJuego(ganador) {
   // Borra la representación de la palabra incompleta en el párrafo.
   const parrafo = id("palabraACompletar");
   parrafo.innerHTML = "";
-}
 
-// Habilita el botón de juego.
-botonJugar.disabled = false;
+ // Habilita el botón de juego.
+ botonJugar.disabled = false;
 
-// Añade un botón para reiniciar el juego.
-botonReiniciar.textContent = 'Reiniciar Juego';
+ // Añade un botón para reiniciar el juego.
+ botonReiniciar.textContent = 'Reiniciar Juego';
 
-// Añade un manejador de eventos para el clic en el botón de reinicio.
-botonReiniciar.addEventListener('click', function () {
+ // Añade un manejador de eventos para el clic en el botón de reinicio.
+ botonReiniciar.addEventListener('click', function () {
   // Deshabilita el teclado.
   deshabilitarTeclado(true);
 
   // Oculta el contenedor de mensajes ('mensajeContainer').
   mensajeContainer.style.display = 'none';
-});
+ });
 
-// Añade el botón de reinicio al contenedor de mensajes ('mensajeContainer').
-mensajeContainer.appendChild(botonReiniciar);
+ // Añade el botón de reinicio al contenedor de mensajes ('mensajeContainer').
+ mensajeContainer.appendChild(botonReiniciar);
+}
+
 
 // Función que maneja el clic en una letra del teclado.
 function manejarClicLetra(event) {
