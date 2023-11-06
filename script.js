@@ -1,10 +1,13 @@
-"use strict";
+"use strict"; // Habilita el modo estricto de JavaScript para un código más seguro.
 
 document.addEventListener("DOMContentLoaded", function () {
-  let palabraSecreta;
-  let intentosRestantes = 6;
+  // Espera a que se cargue todo el contenido HTML antes de ejecutar el script.
 
-  const arrayCategorias = [ //Creamos un array de arrays con las palabras de cada categoria
+  let palabraSecreta; // Declara una variable para almacenar la palabra secreta del juego.
+  let intentosRestantes = 6; // Inicializa una variable para el número de intentos restantes en el juego.
+
+  const arrayCategorias = [ // Crea un array de categorías, cada una de las cuales contiene un array de palabras.
+  ];
 
   // Animales
     [
@@ -474,191 +477,247 @@ document.addEventListener("DOMContentLoaded", function () {
     "Ghostbusters",
     "Memento",
     "Twister",
-    ]
+    ];
 
-  ];
+// Definición de una función llamada 'id' que toma un identificador de elemento (ID) como argumento y devuelve el elemento correspondiente.
+function id(str) {
+  return document.getElementById(str);
+}
 
-  function id(str) {
-    return document.getElementById(str);
-  }
+// Selecciona elementos del DOM por sus ID o etiquetas y los almacena en variables.
+let intentosRestantesElement = id("intentosRestantes");
+const botonJugar = id("empiezaElJuego");
+const botonLetra = document.querySelectorAll("#letras button");
+const imagen = id("ahorcado");
+const botonReiniciar = document.createElement('button');
 
-  let intentosRestantesElement = id("intentosRestantes");
-  const botonJugar = id("empiezaElJuego");
-  const botonLetra = document.querySelectorAll("#letras button");
-  const imagen = id("ahorcado");
-  const botonReiniciar = document.createElement('button');
-
-  function deshabilitarTeclado(disable) {
-    for (let i = 0; i < botonLetra.length; i++) {
-      botonLetra[i].disabled = disable;
-      botonLetra[i].style.color = "#000000"
-    }
-  }
-
-  function empezarJuego() {
-    const mensajeContainer = id('mensajeContainer');
-  
-  // Ocultamos el contenedor de mensajes al empezar un nuevo juego
-    mensajeContainer.style.display = 'none';
-
-    botonJugar.disabled = true;
-
-    // Habilitamos teclado y reiniciamos contador e imagen
-    deshabilitarTeclado(false);
-    intentosRestantes = 6;
-    intentosRestantesElement.textContent = intentosRestantes;
-    imagen.src = `assets/imagenes/Img0.png`;
-
-    // Obtenemoos la categoría seleccionada
-    let categorias = id("desplegableCategorias");
-    let categoria = categorias.value;
-    console.log(`Seleccionada la categoría ${categorias.options[categorias.selectedIndex].text} (${categoria})`);
-
-    const parrafo = id("palabraACompletar");
-    parrafo.innerHTML = "";
-
-    const palabraArrayCategoria = arrayCategorias[categoria];//declaramos variable para la palabra seleccionada aleatoriamente
-    palabraSecreta = palabraArrayCategoria[Math.floor(Math.random() * palabraArrayCategoria.length)].toLowerCase();
-    console.log(`La palabra que el sistema ha escogido de manera aleatoria es: ${palabraSecreta}`);
-
-    const letrasPalabraAJugar = palabraSecreta.length;
-    console.log(`La palabra escogida es ${palabraSecreta} y su longitud es ${letrasPalabraAJugar}`);
-
-    for (let i = 0; i < letrasPalabraAJugar; i++) {
-      const span = document.createElement("span");
-      span.textContent = "_"
-      parrafo.appendChild(span);
-    }
-  }
-
-  function finalizarJuego(ganador) {
-    const mensajeContainer = id('mensajeContainer');
-    mensajeContainer.innerHTML = '';
-  
-    const mensajeFinalElemento = document.createElement('p');
-    if (ganador) {
-      mensajeFinalElemento.innerHTML = '¡Felicidades, has ganado! 🥳';
-    } else {
-      mensajeFinalElemento.innerHTML = '¡Has perdido! Inténtalo de nuevo.😞';
-    }
-    mensajeFinalElemento.innerHTML += `<br /><br />La palabra es ${palabraSecreta}`;
-  
-    mensajeContainer.appendChild(mensajeFinalElemento);
-    mensajeContainer.style.display = 'block';
-  
-    deshabilitarTeclado(true);
-    intentosRestantes = 6;
-    intentosRestantesElement.textContent = intentosRestantes;
-    imagen.src = `assets/imagenes/Img0.png`;
-    const parrafo = id("palabraACompletar");
-    parrafo.innerHTML = "";
-
-
-    botonJugar.disabled = false;
-    // Añadir un botón para reiniciar el juego
-    botonReiniciar.textContent = 'Reiniciar Juego';
-    botonReiniciar.addEventListener('click', function () {
-      deshabilitarTeclado(true);
-   
-    // Ocultar el mensajeContainer
-    mensajeContainer.style.display = 'none';
-  });
-
-  mensajeContainer.appendChild(botonReiniciar);
-  }
-
-  function manejarClicLetra(event) {
-    const spans = document.querySelectorAll("#palabraACompletar span");
-    const botonLetraApretada = event.target;
-    botonLetraApretada.disabled = true;
-    console.log(`La letra apretada es: ${botonLetraApretada}`);
-
-    const letra = botonLetraApretada.innerHTML.toLowerCase();
-    const palabra = palabraSecreta.toLowerCase();
-
-    let acierto = false;
-    for (let i = 0; i < palabra.length; i++) {
-      if (letra == palabra[i]) {
-        spans[i].innerHTML = letra;
-        acierto = true;
-      }
-    }
-
-    if (acierto) {
-      botonLetraApretada.style.color = "#00FF00";
-      let completa = true;
-      for (let i = 0; i < palabra.length; i++) {
-        if (spans[i].innerHTML != palabra[i]) {
-          completa = false;
-          break;
-        }
-      }
-      if (completa) {
-        finalizarJuego(true); // Has ganado
-      }
-    } else {
-      botonLetraApretada.style.color = "#ff001e";
-      intentosRestantes--;
-      intentosRestantesElement.textContent = intentosRestantes;
-      imagen.src = `assets/imagenes/Img${6 - intentosRestantes}.png`;
-      if (intentosRestantes == 0) {
-        finalizarJuego(false); // Has perdido
-      }
-    }
-    
-  }
-  
-  botonJugar.addEventListener("click", empezarJuego);
-
+// Función que deshabilita o habilita los botones del teclado según el valor del argumento 'disable'.
+function deshabilitarTeclado(disable) {
   for (let i = 0; i < botonLetra.length; i++) {
-    botonLetra[i].addEventListener("click", manejarClicLetra);
+    botonLetra[i].disabled = disable;
+    botonLetra[i].style.color = "#000000"; // Cambia el color del texto de los botones a negro.
   }
+}
+
+// Función que inicia un nuevo juego y realiza varias operaciones.
+function empezarJuego() {
+  const mensajeContainer = id('mensajeContainer');
   
+  // Oculta el contenedor de mensajes al comenzar un nuevo juego.
+  mensajeContainer.style.display = 'none';
+
+  botonJugar.disabled = true;
+
+  // Habilita el teclado y reinicia el contador e imagen.
+  deshabilitarTeclado(false);
+  intentosRestantes = 6;
+  intentosRestantesElement.textContent = intentosRestantes;
+  imagen.src = `assets/imagenes/Img0.png`;
+
+  // Obtiene la categoría seleccionada desde un elemento desplegable en el DOM.
+  let categorias = id("desplegableCategorias");
+  let categoria = categorias.value;
+  console.log(`Seleccionada la categoría ${categorias.options[categorias.selectedIndex].text} (${categoria})`);
+
+  const parrafo = id("palabraACompletar");
+  parrafo.innerHTML = "";
+
+  // Obtiene una palabra aleatoria de la categoría seleccionada.
+  const palabraArrayCategoria = arrayCategorias[categoria];
+  palabraSecreta = palabraArrayCategoria[Math.floor(Math.random() * palabraArrayCategoria.length)].toLowerCase();
+  console.log(`La palabra que el sistema ha escogido de manera aleatoria es: ${palabraSecreta}`);
+
+  const letrasPalabraAJugar = palabraSecreta.length;
+  console.log(`La palabra escogida es ${palabraSecreta} y su longitud es ${letrasPalabraAJugar}`);
+
+  // Crea espacios en blanco para las letras de la palabra a adivinar.
+  for (let i = 0; i < letrasPalabraAJugar; i++) {
+    const span = document.createElement("span");
+    span.textContent = "_";
+    parrafo.appendChild(span);
+  }
+}
+
+function finalizarJuego(ganador) {
+  // Obtiene una referencia al elemento con el ID 'mensajeContainer'.
+  const mensajeContainer = id('mensajeContainer');
+  mensajeContainer.innerHTML = '';
+  
+  // Crea un elemento de párrafo para mostrar un mensaje final.
+  const mensajeFinalElemento = document.createElement('p');
+  if (ganador) {
+    // Si el jugador ganó, establece un mensaje de felicitación.
+    mensajeFinalElemento.innerHTML = '¡Felicidades, has ganado! 🥳';
+  } else {
+    // Si el jugador perdió, muestra un mensaje de derrota.
+    mensajeFinalElemento.innerHTML = '¡Has perdido! Inténtalo de nuevo. 😞';
+  }
+  // Agrega información sobre la palabra secreta al mensaje final.
+  mensajeFinalElemento.innerHTML += `<br /><br />La palabra es ${palabraSecreta}`;
+  
+  // Agrega el mensaje final al contenedor de mensajes.
+  mensajeContainer.appendChild(mensajeFinalElemento);
+  // Muestra el contenedor de mensajes para mostrar el resultado.
+  mensajeContainer.style.display = 'block';
+  
+  // Deshabilita el teclado para evitar más intentos.
   deshabilitarTeclado(true);
+  // Reinicia el contador de intentos restantes a 6.
+  intentosRestantes = 6;
+  intentosRestantesElement.textContent = intentosRestantes;
+  // Restaura la imagen del ahorcado a su estado inicial.
+  imagen.src = `assets/imagenes/Img0.png`;
+  // Borra la representación de la palabra incompleta en el párrafo.
+  const parrafo = id("palabraACompletar");
+  parrafo.innerHTML = "";
+}
+
+// Habilita el botón de juego.
+botonJugar.disabled = false;
+
+// Añade un botón para reiniciar el juego.
+botonReiniciar.textContent = 'Reiniciar Juego';
+
+// Añade un manejador de eventos para el clic en el botón de reinicio.
+botonReiniciar.addEventListener('click', function () {
+  // Deshabilita el teclado.
+  deshabilitarTeclado(true);
+
+  // Oculta el contenedor de mensajes ('mensajeContainer').
+  mensajeContainer.style.display = 'none';
 });
 
+// Añade el botón de reinicio al contenedor de mensajes ('mensajeContainer').
+mensajeContainer.appendChild(botonReiniciar);
+
+// Función que maneja el clic en una letra del teclado.
+function manejarClicLetra(event) {
+  // Obtiene una lista de elementos 'span' que representan las letras ocultas de la palabra a adivinar.
+  const spans = document.querySelectorAll("#palabraACompletar span");
+
+  // Obtiene el botón de letra en el que se hizo clic.
+  const botonLetraApretada = event.target;
+
+  // Deshabilita el botón de letra para evitar múltiples clics.
+  botonLetraApretada.disabled = true;
+
+  // Obtiene la letra apretada y la convierte a minúsculas.
+  const letra = botonLetraApretada.innerHTML.toLowerCase();
+
+  // Obtiene la palabra secreta en minúsculas.
+  const palabra = palabraSecreta.toLowerCase();
+
+  // Inicializa una variable para rastrear si el jugador acertó.
+  let acierto = false;
+
+  // Comprueba si la letra apretada está en la palabra secreta y la revela si es un acierto.
+  for (let i = 0; i < palabra.length; i++) {
+    if (letra == palabra[i]) {
+      spans[i].innerHTML = letra;
+      acierto = true;
+    }
+  }
+
+  // Si el jugador acierta, cambia el color del botón de letra a verde ('#00FF00').
+  if (acierto) {
+    botonLetraApretada.style.color = "#00FF00";
+
+    // Comprueba si todas las letras de la palabra han sido reveladas.
+    let completa = true;
+    for (let i = 0; i < palabra.length; i++) {
+      if (spans[i].innerHTML != palabra[i]) {
+        completa = false;
+        break;
+      }
+    }
+
+    // Si todas las letras han sido reveladas, el jugador ha ganado y se llama a 'finalizarJuego(true)'.
+    if (completa) {
+      finalizarJuego(true); // Has ganado
+    }
+  } else {
+    // Si no es un acierto, cambia el color del botón de letra a rojo ('#ff001e').
+    botonLetraApretada.style.color = "#ff001e";
+
+    // Reduce el número de intentos restantes.
+    intentosRestantes--;
+
+    // Actualiza el contador de intentos restantes en la interfaz.
+    intentosRestantesElement.textContent = intentosRestantes;
+
+    // Actualiza la imagen del ahorcado.
+    imagen.src = `assets/imagenes/Img${6 - intentosRestantes}.png`;
+
+    // Si el jugador se queda sin intentos, se llama a 'finalizarJuego(false)' porque ha perdido.
+    if (intentosRestantes == 0) {
+      finalizarJuego(false); // Has perdido
+    }
+  }
+}
+
+// Añade un evento de clic al botón 'botonJugar' que llama a la función 'empezarJuego' cuando se hace clic.
+botonJugar.addEventListener("click", empezarJuego);
+
+// Añade eventos de clic a todos los botones de letras del teclado, llamando a la función 'manejarClicLetra' cuando se hace clic en cada uno.
+for (let i = 0; i < botonLetra.length; i++) {
+  botonLetra[i].addEventListener("click", manejarClicLetra);
+}
+
+// Inicialmente, deshabilita todos los botones de letras para evitar clics antes de iniciar el juego.
+deshabilitarTeclado(true);
+});
+
+// La función 'shuffleArray' toma una matriz y la reorganiza aleatoriamente.
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      let temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
   }
 }
 
+// Obtiene una colección de elementos "span".
 let spanTexts = document.getElementsByTagName("span");
+
+// Cuando la ventana se carga completamente (evento 'window.onload'), realiza lo siguiente:
 window.onload = function() {
+  // Crea una matriz de índices de los elementos "span".
   let indices = Array.from(Array(spanTexts.length).keys());
+
+  // Reorganiza aleatoriamente los índices de la matriz.
   shuffleArray(indices);
+
+  // Inicializa un retraso para la animación de las letras en la palabra.
   let delay = 1.0;
-  for (let i of indices)
-  {
-      spanTexts[i].style.transitionDelay = delay.toString() + "s";
-      spanTexts[i].classList.add("active");
-      delay += 0.3;
+
+  // Para cada índice reorganizado:
+  for (let i of indices) {
+    spanTexts[i].style.transitionDelay = delay.toString() + "s";
+    spanTexts[i].classList.add("active"); // Agrega la clase "active" para mostrar la letra.
+    delay += 0.3; // Añade un retraso para la siguiente letra.
   }
 
+  // Obtiene elementos HTML para mostrar y cerrar un mensaje emergente (modal).
+  const mostrarModalBtn = document.getElementById("mostrarModal");
+  const modal = document.getElementById("modal");
+  const cerrarModalBtn = document.getElementById("cerrarModal");
 
-// Obtiene elementos HTML
-const mostrarModalBtn = document.getElementById("mostrarModal");
-const modal = document.getElementById("modal");
-const cerrarModalBtn = document.getElementById("cerrarModal");
-
-// Muestra el mensaje emergente al hacer clic en el botón
-mostrarModalBtn.addEventListener("click", function() {
+  // Muestra el mensaje emergente al hacer clic en el botón 'mostrarModalBtn'.
+  mostrarModalBtn.addEventListener("click", function() {
     modal.style.display = "block";
-});
+  });
 
-// Cierra el mensaje emergente al hacer clic en el botón de cierre
-cerrarModalBtn.addEventListener("click", function() {
+  // Cierra el mensaje emergente al hacer clic en el botón de cierre "cerrarModalBtn".
+  cerrarModalBtn.addEventListener("click", function() {
     modal.style.display = "none";
-});
+  });
 
-// Cierra el mensaje emergente al hacer clic fuera del contenido del mensaje
-window.addEventListener("click", function(event) {
+  // Cierra el mensaje emergente al hacer clic en cualquier lugar fuera del contenido del mensaje.
+  window.addEventListener("click", function(event) {
     if (event.target === modal) {
-        modal.style.display = "none";
+      modal.style.display = "none";
     }
-});
-
+  });
 }
+
