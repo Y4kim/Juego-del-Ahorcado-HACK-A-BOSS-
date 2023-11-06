@@ -31,7 +31,7 @@ main {
   "intentos"
   "teclado"
   "footer";
-  grid-template-rows: 5rem 13.5rem 25rem 4rem auto 4rem;
+  grid-template-rows: 4rem 12rem 25rem auto auto 2rem;/*modifico alturas para cuadrar + quito paddings*/
 
 }
 
@@ -256,8 +256,8 @@ section.intentos {
     font-family: 'tiza';
     font-size:15px;
     letter-spacing: 4px;
-    padding-top:20px;
     color: aliceblue;
+    padding-bottom: 10px;
   }
 
   #mensajeContainer{
@@ -277,7 +277,7 @@ section.teclado {
   grid-area: teclado;
   height: auto;
   text-align:center;
-  padding-bottom:20px;
+  padding-bottom:10px;
 }
 
 

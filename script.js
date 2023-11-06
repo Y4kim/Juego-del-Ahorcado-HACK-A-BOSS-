@@ -484,7 +484,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let intentosRestantesElement = id("intentosRestantes");
   const botonJugar = id("empiezaElJuego");
-  const botonCategorias = document.querySelectorAll("#categorias button");//añadimos los botónes del div.ID CATGEORIAS
   const botonLetra = document.querySelectorAll("#letras button");
   const imagen = id("ahorcado");
   const botonReiniciar = document.createElement('button');
