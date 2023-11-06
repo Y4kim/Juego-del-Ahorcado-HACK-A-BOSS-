@@ -205,7 +205,6 @@ select:focus {
   color: white; /* Establece el color del texto en blanco */
   width: 200px; /* Establece el ancho del botón en 200 píxeles */
   margin-top:20px; /* Agrega espacio encima del botón */
-  padding: 10px 20px 10px 20px; /* Agrega relleno de 10 píxeles arriba, 20 píxeles a la derecha e izquierda, y 10 píxeles abajo */
   font-size: 16px; /* Establece el tamaño de fuente en 16 píxeles */
   border: solid 1px white; /* Agrega un border solido de 1px de color blanco */
   border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al botón */
@@ -399,4 +398,15 @@ footer {
   width: 200px; /* Establece un ancho de 200 píxeles para el botón */
   border: 1px solid white; /* Agrega un borde de 1 píxel sólido en blanco alrededor del botón */
  } 
+ #mensajeContainer button {
+  /* Estilos para los botones dentro del contenedor de mensajes */
+  background-color: black; /* Establece el color de fondo del botón en negro */
+  color: white; /* Establece el color del texto en blanco */
+  width: 200px; /* Establece el ancho del botón en 200 píxeles */
+  margin-top:20px; /* Agrega espacio encima del botón */
+  padding: 10px 20px 10px 20px; /* Agrega relleno de 10 píxeles arriba, 20 píxeles a la derecha e izquierda, y 10 píxeles abajo */
+  font-size: 16px; /* Establece el tamaño de fuente en 16 píxeles */
+  border: solid 1px white; /* Agrega un border solido de 1px de color blanco */
+  border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al botón */
+}
 }
