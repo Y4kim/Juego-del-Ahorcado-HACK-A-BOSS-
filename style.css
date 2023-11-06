@@ -171,6 +171,9 @@ div.menu {
   border: none; /* Elimina el borde del botón */
   border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al botón */
 } 
+#empiezaElJuego:disabled {
+  background-color: rgba(161, 161, 161, 0.16); /* Establece un color de fondo semitransparente para indicar que el botón está deshabilitado. El valor RGBA define un color gris con una opacidad del 16% */
+  }
 
 select {
   /* Estilos para el menú desplegable */
@@ -209,6 +212,7 @@ select:focus {
   border: solid 1px white; /* Agrega un border solido de 1px de color blanco */
   border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al botón */
 }
+
 
 #mensajeContainer button:hover {
   /* Estilos cuando el mouse pasa sobre el botón dentro del contenedor de mensajes */
@@ -409,4 +413,7 @@ footer {
   border: solid 1px white; /* Agrega un border solido de 1px de color blanco */
   border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al botón */
 }
+#empiezaElJuego:disabled {
+  background-color: rgba(161, 161, 161, 0.16); /* Establece un color de fondo semitransparente para indicar que el botón está deshabilitado. El valor RGBA define un color gris con una opacidad del 16% */
+  }
 }
