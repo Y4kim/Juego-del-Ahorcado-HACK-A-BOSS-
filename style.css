@@ -313,12 +313,11 @@ footer {
   text-align: center; /* Centra el texto horizontalmente en el pie de página */
   letter-spacing: 1.5px; /* Aumenta el espaciado entre letras a 1.5 píxeles */
   line-height: 2; /* Establece la altura de línea en 2 veces el tamaño de fuente, proporcionando un espaciado vertical adecuado */
-  padding-bottom: 2em; /* Agrega un relleno de 2 em en la parte inferior para separar el footer de a linea del final.
+  padding-bottom: 2em; /* Agrega un relleno de 2 em en la parte inferior para separar el footer de a linea del final.*/
 }
-
-@media (min-width: 600px) {
-  /* Estilos aplicados en pantallas con un ancho mínimo de 600 píxeles */
-
+/* Estilos aplicados en pantallas con un ancho mínimo de 600 píxeles */
+@media (min-width:600px) {
+  
   .title {
     /* Estilos para elementos con clase 'title' en pantallas grandes */
     font-family: 'tiza'; /* Aplica la fuente personalizada 'tiza' al texto con esta clase */
