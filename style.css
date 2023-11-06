@@ -1,390 +1,407 @@
+/* Definición de fuentes personalizadas */
 @font-face {
-  font-family: 'tiza';
-  src:url(assets/fonts/KGSecondChancesSketch.ttf);
-  font-style: normal;
-  font-weight: normal;
+  font-family: 'tiza'; /* Define la fuente personalizada 'tiza' */
+  src: url(assets/fonts/KGSecondChancesSketch.ttf); /* Ruta a la fuente de tipo 'tiza' */
+  font-style: normal; /* Establece el estilo de la fuente como normal */
+  font-weight: normal; /* Establece el peso de la fuente como normal */
 }
 
 @font-face {
-  font-family: 'solid';
-  src:url(assets/fonts/KGSecondChancesSolid.ttf);
-  font-style: normal;
-  font-weight: normal;
+  font-family: 'solid'; /* Define la fuente personalizada 'solid' */
+  src: url(assets/fonts/KGSecondChancesSolid.ttf); /* Ruta a la fuente de tipo 'solid' */
+  font-style: normal; /* Establece el estilo de la fuente como normal */
+  font-weight: normal; /* Establece el peso de la fuente como normal */
 }
 
+/* Estilo global para todos los elementos */
+
+/* Establece que no haya relleno (padding), margen (margin) ni bordes (border) por defecto en todos los elementos HTML */
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  
+  padding: 0; /* Establece el relleno de todos los elementos en 0 */
+  margin: 0; /* Establece el margen de todos los elementos en 0 */
+  box-sizing: border-box; /* Configura la caja de modelo para que el ancho y alto incluyan el contenido y el borde, pero no el margen */
 }
 
+/* Estilos para el contenedor principal (main) */
 main {
-  background-image: url(assets/imagenes/pizarra02.jpg);
-  background-size: cover;
-  min-height: 100vh;
-  display: grid;
-  grid-template-areas:
-  "titulo"
-  "menu"
-  "dibujo"
-  "intentos"
-  "teclado"
-  "footer";
-  grid-template-rows: 4rem 12rem 25rem auto auto 2rem;/*modifico alturas para cuadrar + quito paddings*/
-
+  background-image: url(assets/imagenes/pizarra02.jpg); /* Establece una imagen de fondo en el contenedor principal */
+  background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor */
+  min-height: 100vh; /* Establece la altura mínima del contenedor a la altura de la ventana gráfica (viewport height) */
+  display: grid; /* Utiliza un diseño de cuadrícula para organizar los elementos internos */
+  grid-template-areas: /* Define áreas de la cuadrícula para organizar los elementos internos */
+    "titulo"
+    "menu"
+    "dibujo"
+    "intentos"
+    "teclado"
+    "footer"; 
+  grid-template-rows: 4rem 12rem 25rem auto auto 2rem; /* Establece la altura de las filas de la cuadrícula */
 }
 
+/* Estilos para el encabezado (header) */
 header {
-  grid-area: titulo;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  grid-area: titulo; /* Asigna el área de la cuadrícula llamada "titulo" al encabezado */
+  display: flex; /* Utiliza un diseño de caja flexible para el encabezado */
+  align-items: center; /* Centra verticalmente el contenido del encabezado */
+  justify-content: center; /* Centra horizontalmente el contenido del encabezado */
 }
 
-header h1{
-  color: aliceblue;
-  font-family: 'solid';
-}
-
+/* Estilos para la sección del título */
 .title {
-  padding-top:40px;
-  font-family: 'tiza';
-  text-align: center;
-  color: whitesmoke;
-  font-weight: 50;
-  font-size: 22px;
-  letter-spacing: -1px;
+  padding-top: 40px; /* Espaciado superior de 40 píxeles */
+  font-family: 'tiza'; /* Aplica la fuente personalizada llamada 'tiza' */
+  text-align: center; /* Centra el texto horizontalmente en la sección */
+  color: whitesmoke; /* Establece el color del texto en blanco ahumado */
+  font-weight: 50; /* Establece el peso de la fuente en 50 (valor personalizado) */
+  font-size: 22px; /* Tamaño de fuente de 22 píxeles */
+  letter-spacing: -1px; /* Espaciado entre letras de -1 píxel */
 }
 
+/* Estilos para las letras individuales en el título */
 .title span {
-  white-space: pre;
-  opacity: 0;
-  display: inline-block;
-  transform: translateY(-100px);
-  transition: transform 1s, opacity 1s;
+  white-space: pre; /* Conserva espacios en blanco en el texto */
+  opacity: 0; /* Inicialmente, las letras son transparentes */
+  display: inline-block; /* Muestra las letras como bloques en línea */
+  transform: translateY(-100px); /* Desplaza las letras hacia arriba en 100 píxeles */
+  transition: transform 1s, opacity 1s; /* Aplica una transición de 1 segundo para transformación y opacidad */
 }
 
+/* Estilos para las letras individuales activas en el título */
 .title span.active {
-  opacity: 1;
-  transform: translateY(0px);
+  opacity: 1; /* Hace que las letras activas sean completamente visibles */
+  transform: translateY(0px); /* Vuelve a la posición normal (0 píxeles de desplazamiento) */
 }
 
+/* Estilos para la barra de navegación (nav) */
 nav {
-  /* barra de navegacion */
-  grid-area: menu;
-  list-style: none;
-  font-family: 'tiza';
+  grid-area: menu; /* Asigna el área de la cuadrícula llamada "menu" a la barra de navegación */
+  list-style: none; /* Elimina los marcadores de lista predeterminados */
+  font-family: 'tiza'; /* Aplica la fuente personalizada llamada 'tiza' a la barra de navegación */
 }
 
-.subtitulo{
-  text-align: center;
-  font-size: 12px;
-  letter-spacing:2px;
-  line-height: 2;
-  padding:20px;
-  color: aliceblue;
+.subtitulo {
+  text-align: center; /* Centra el texto horizontalmente en la clase 'subtitulo' */
+  font-size: 12px; /* Establece el tamaño de fuente en 12 píxeles */
+  letter-spacing: 2px; /* Agrega espacio entre letras de 2 píxeles */
+  line-height: 2; /* Establece la altura de línea en 2 veces el tamaño de fuente */
+  padding: 20px; /* Agrega relleno de 20 píxeles en todos los lados de la clase 'subtitulo' */
+  color: aliceblue; /* Establece el color del texto en azul claro */
 }
 
- #mostrarModal {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: 10px;
-  background-color:rgba(0, 0, 0, 0.482);
-  color:white;
-  width: 200px;
-  border: 1px solid white;
+#mostrarModal {
+  position: fixed; /* Fija la posición del elemento en la ventana gráfica */
+  bottom: 0; /* Lo coloca en la parte inferior de la ventana gráfica */
+  right: 0; /* Lo coloca en la esquina derecha de la ventana gráfica */
+  margin: 10px; /* Agrega un margen de 10 píxeles alrededor del elemento */
+  background-color: rgba(0, 0, 0, 0.482); /* Establece un color de fondo con una cierta opacidad */
+  color: white; /* Establece el color del texto en blanco */
+  width: 200px; /* Establece el ancho del elemento en 200 píxeles */
+  border: 1px solid white; /* Agrega un borde de 1 píxel sólido en blanco alrededor del elemento */
 }
 
 .modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: none;
-  /*meter estilo letra)*/
+  display: none; /* Inicialmente oculta el elemento con la clase 'modal' */
+  position: fixed; /* Fija la posición del elemento en la ventana gráfica */
+  top: 0; /* Lo coloca en la parte superior de la ventana gráfica */
+  left: 0; /* Lo coloca en la esquina izquierda de la ventana gráfica */
+  width: 100%; /* Establece el ancho del elemento al 100% de la ventana gráfica */
+  height: 100%; /* Establece la altura del elemento al 100% de la ventana gráfica */
+  background-image: none; /* No se utiliza una imagen de fondo para el elemento */
 }
 
 .modal-contenido {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: black;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  vertical-align: center;
-  padding: 30px;
-  height: 300px;
-  width: 250px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  color: whitesmoke;
-  font-family: "solid";
-  font-size: 11px;
-  text-align:center;
-  line-height: 2;
-  letter-spacing:2px;
+  position: absolute; /* Fija la posición del elemento de manera absoluta en relación con su contenedor principal */
+  top: 50%; /* Lo coloca en la mitad superior del contenedor principal */
+  left: 50%; /* Lo coloca en la mitad izquierda del contenedor principal */
+  transform: translate(-50%, -50%); /* Centra vertical y horizontalmente el elemento */
+  background-color: black; /* Establece un color de fondo negro para el elemento */
+  display: flex; /* Utiliza un diseño de caja flexible para el contenido del elemento */
+  justify-content: center; /* Centra horizontalmente el contenido del elemento */
+  align-items: center; /* Centra verticalmente el contenido del elemento */
+  vertical-align: center; /* Alinea verticalmente el contenido al centro */
+  padding: 30px; /* Agrega un relleno de 30 píxeles en todos los lados del elemento */
+  height: 300px; /* Establece la altura del elemento en 300 píxeles */
+  width: 250px; /* Establece el ancho del elemento en 250 píxeles */
+  border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al elemento */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Agrega una sombra al elemento */
+  color: whitesmoke; /* Establece el color del texto en blanco ahumado */
+  font-family: "solid"; /* Aplica la fuente personalizada llamada 'solid' al contenido del elemento */
+  font-size: 11px; /* Establece el tamaño de fuente en 11 píxeles */
+  text-align: center; /* Centra el texto horizontalmente en el elemento */
+  line-height: 2; /* Establece la altura de línea en 2 veces el tamaño de fuente */
+  letter-spacing: 2px; /* Agrega espacio entre letras de 2 píxeles */
 }
 
 .cerrar-modal {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size:25px;
-  font-weight: 20;
-  cursor: pointer;
+  position: absolute; /* Fija la posición del elemento de manera absoluta en relación con su contenedor */
+  top: 10px; /* Lo coloca 10 píxeles desde la parte superior del contenedor */
+  right: 10px; /* Lo coloca 10 píxeles desde la parte derecha del contenedor */
+  font-size: 25px; /* Establece el tamaño de fuente en 25 píxeles */
+  font-weight: 20; /* Establece el peso de la fuente en 20 (valor personalizado) */
+  cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el elemento, indicando que es interactivo */
 }
-
-
 
 div.menu {
-  /* Barra de navegacion */
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  font-family: 'tiza';
+  /* Estilos para el contenedor de la barra de navegación */
+  display: flex; /* Utiliza un modelo de caja flexible para organizar el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido en el contenedor */
+  align-items: center; /* Centra verticalmente el contenido en el contenedor */
+  font-family: 'tiza'; /* Aplica la fuente personalizada 'tiza' al contenido del contenedor */
 }
 
- #empiezaElJuego {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "tiza";
-  font-size:15px;
-  color: aliceblue;
-  background-color: black;
-  width: 300px;
-  border: none;
-  border-radius: 5px;
-  padding:30px 0px 30px 0px;
+#empiezaElJuego {
+  /* Estilos para el botón 'empiezaElJuego' */
+  display: flex; /* Utiliza un modelo de caja flexible para el botón */
+  align-items: center; /* Centra verticalmente el contenido del botón */
+  justify-content: center; /* Centra horizontalmente el contenido del botón */
+  font-family: "tiza"; /* Aplica la fuente personalizada 'tiza' al texto del botón */
+  font-size: 15px; /* Establece el tamaño de fuente en 15 píxeles */
+  color: aliceblue; /* Establece el color del texto en azul claro */
+  background-color: black; /* Establece el color de fondo del botón en negro */
+  width: 300px; /* Establece el ancho del botón en 300 píxeles */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al botón */
+  padding: 30px 0px 30px 0px; /* Agrega relleno de 30 píxeles arriba y abajo, y 0 píxeles a los lados */
 }
-
 
 #empiezaElJuego:hover {
-  font-family: "tiza";
-  font-size:15px;
-  border: none;
-  border-radius: 5px;
+  /* Estilos cuando el mouse pasa sobre el botón 'empiezaElJuego' */
+  font-family: "tiza"; /* Aplica la fuente personalizada 'tiza' al texto del botón */
+  font-size: 15px; /* Establece el tamaño de fuente en 15 píxeles */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al botón */
 } 
 
-select {/*desplegable*/
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-family: "tiza";
-  font-size:15px;
-  text-align: center;
-  color: aliceblue;
-  background-color: black;
-  padding:20px;
-  width: 300px;
-  border: none;
-  border-radius: 5px;
+select {
+  /* Estilos para el menú desplegable */
+  display: flex; /* Utiliza un modelo de caja flexible para el menú desplegable */
+  justify-content: center; /* Centra horizontalmente el contenido en el menú desplegable */
+  align-items: center; /* Centra verticalmente el contenido en el menú desplegable */
+  text-align: center; /* Centra el texto horizontalmente en el menú desplegable */
+  font-family: "tiza"; /* Aplica la fuente personalizada 'tiza' al texto del menú desplegable */
+  font-size: 15px; /* Establece el tamaño de fuente en 15 píxeles */
+  color: aliceblue; /* Establece el color del texto en azul claro */
+  background-color: black; /* Establece el color de fondo del menú desplegable en negro */
+  padding: 20px; /* Agrega relleno de 20 píxeles en todos los lados del menú desplegable */
+  width: 300px; /* Establece el ancho del menú desplegable en 300 píxeles */
+  border: none; /* Elimina el borde del menú desplegable */
+  border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al menú desplegable */
 }
 
 select:focus {
-  outline: none;
-  border-color: lightsalmon;
+  /* Estilos cuando el menú desplegable está enfocado */
+  outline: none; /* Elimina el resaltado predeterminado del enfoque */
+  border-color: lightsalmon; /* Cambia el color del borde cuando el menú desplegable está enfocado */
 }
 
 #mensajeContainer {
-  background-color: black; 
-
+  /* Estilos para el contenedor de mensajes */
+  background-color: black; /* Establece el color de fondo del contenedor en negro */
 }
 
 #mensajeContainer button {
-  background-color: black; 
-  color: white; 
-  width: 200px;
-  padding: 10px 20px 10px 20px; 
-  font-size: 16px; 
-  border: none; 
-  border-radius: 5px; 
+  /* Estilos para los botones dentro del contenedor de mensajes */
+  background-color: black; /* Establece el color de fondo del botón en negro */
+  color: white; /* Establece el color del texto en blanco */
+  width: 200px; /* Establece el ancho del botón en 200 píxeles */
+  padding: 10px 20px 10px 20px; /* Agrega relleno de 10 píxeles arriba, 20 píxeles a la derecha e izquierda, y 10 píxeles abajo */
+  font-size: 16px; /* Establece el tamaño de fuente en 16 píxeles */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al botón */
 }
 
-
 #mensajeContainer button:hover {
-  background-color: grey; 
+  /* Estilos cuando el mouse pasa sobre el botón dentro del contenedor de mensajes */
+  background-color: grey; /* Cambia el color de fondo del botón a gris */
 }
 
 figure.dibujo {
-  grid-area: dibujo;
-  text-align: center;
-  background-size: cover;
-  font-family: 'tiza';
+  /* Estilos para la figura con clase 'dibujo' */
+  grid-area: dibujo; /* Asigna la figura a la zona 'dibujo' en el diseño de cuadrícula */
+  text-align: center; /* Centra el contenido de la figura horizontalmente */
+  background-size: cover; /* Ajusta el tamaño del fondo para cubrir todo el espacio disponible */
+  font-family: 'tiza'; /* Aplica la fuente personalizada 'tiza' al contenido de la figura */
 }
 
-#ahorcado{
-  margin: 20px;
-  width: 250px;
+#ahorcado {
+  /* Estilos para la imagen con ID 'ahorcado' */
+  margin: 20px; /* Agrega un margen de 20 píxeles alrededor de la imagen */
+  width: 250px; /* Establece el ancho de la imagen en 250 píxeles */
 }
 
 section.palabra {
-  grid-area: palabra;
-  text-align: center;
-  font-family: 'tiza';
+  /* Estilos para la sección con clase 'palabra' */
+  grid-area: palabra; /* Asigna la sección a la zona 'palabra' en el diseño de cuadrícula */
+  text-align: center; /* Centra el contenido de la sección horizontalmente */
+  font-family: 'tiza'; /* Aplica la fuente personalizada 'tiza' al contenido de la sección */
 }
 
-#palabraACompletar{
-  color:aliceblue;
-  font-family: 'tiza';
-  text-align: center;
-  font-size:12px;
-  }
-
+#palabraACompletar {
+  /* Estilos para el elemento con ID 'palabraACompletar' */
+  color: aliceblue; /* Establece el color del texto en azul claro */
+  font-family: 'tiza'; /* Aplica la fuente personalizada 'tiza' al texto */
+  text-align: center; /* Centra el texto horizontalmente */
+  font-size: 12px; /* Establece el tamaño de fuente en 12 píxeles */
+}
 
 #palabraACompletar span {
-    font-family: 'tiza';
-    vertical-align: bottom;
-    font-size: 3em;
-    display: inline-block;
-    margin-right: 22px;
-    width: 20px;
-    justify-content: center;
-  }
+  /* Estilos para los elementos 'span' dentro de 'palabraACompletar' */
+  font-family: 'tiza'; /* Aplica la fuente personalizada 'tiza' al texto */
+  vertical-align: bottom; /* Alinea verticalmente el contenido en la parte inferior */
+  font-size: 3em; /* Establece el tamaño de fuente en 3 veces el tamaño normal */
+  display: inline-block; /* Hace que los elementos 'span' sean elementos en línea bloque */
+  margin-right: 22px; /* Agrega un margen de 22 píxeles a la derecha de los elementos 'span' */
+  width: 20px; /* Establece el ancho de los elementos 'span' en 20 píxeles */
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
 
 section.intentos {
-    grid-area: intentos;
-    text-align: center;
-    font-family: 'tiza';
-    font-size:15px;
-    letter-spacing: 4px;
-    color: aliceblue;
-    padding-bottom: 10px;
-  }
+  /* Estilos para la sección 'intentos' */
+  grid-area: intentos; /* Asigna la sección a la zona 'intentos' en el diseño de cuadrícula */
+  text-align: center; /* Centra el contenido de la sección horizontalmente */
+  font-family: 'tiza'; /* Aplica la fuente personalizada 'tiza' al contenido de la sección */
+  font-size: 15px; /* Establece el tamaño de fuente en 15 píxeles */
+  letter-spacing: 4px; /* Aumenta el espaciado entre letras a 4 píxeles */
+  color: aliceblue; /* Establece el color del texto en azul claro */
+  padding-bottom: 10px; /* Agrega un relleno de 10 píxeles en la parte inferior de la sección */
+}
 
-  #mensajeContainer{
-    color:white;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 100%;
-    text-align: center;
-    z-index: 1000; 
-    display: none; 
-  }
+#mensajeContainer {
+  /* Estilos para el contenedor de mensajes */
+  color: white; /* Establece el color del texto en blanco */
+  position: fixed; /* Fija el contenedor en una posición fija en la ventana del navegador */
+  top: 50%; /* Alinea el contenedor verticalmente al 50% de la ventana */
+  left: 50%; /* Alinea el contenedor horizontalmente al 50% de la ventana */
+  transform: translate(-50%, -50%); /* Centra el contenedor en la ventana */
+  padding: 100%; /* Agrega un relleno del 100% para ocupar todo el espacio disponible */
+  text-align: center; /* Centra el texto horizontalmente en el contenedor */
+  z-index: 1000; /* Establece una capa z alta para que esté por encima de otros elementos */
+  display: none; /* Inicialmente oculta el contenedor de mensajes */
+}
 
 section.teclado {
-  /* teclado */
-  grid-area: teclado;
-  height: auto;
-  text-align:center;
-  padding-bottom:10px;
+  /* Estilos para la sección 'teclado' */
+  grid-area: teclado; /* Asigna la sección a la zona 'teclado' en el diseño de cuadrícula */
+  height: auto; /* Establece la altura de la sección automáticamente */
+  text-align: center; /* Centra el contenido de la sección horizontalmente */
+  padding-bottom: 10px; /* Agrega un relleno de 10 píxeles en la parte inferior de la sección */
 }
-
 
 button {
-  /* teclado */
-  margin: 0.1rem;
-  width: 1.8rem;
-  height: 1.8rem;
-  border: none;
-  border-radius: 0.2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra teclado*/
-  font-family: "solid"; 
+  /* Estilos para los botones */
+  margin: 0.1rem; /* Establece un margen de 0.1rem alrededor de los botones */
+  width: 1.8rem; /* Establece un ancho de 1.8rem para los botones */
+  height: 1.8rem; /* Establece una altura de 1.8rem para los botones */
+  border: none; /* Elimina el borde de los botones */
+  border-radius: 0.2rem; /* Agrega bordes redondeados de 0.2rem a los botones */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Agrega una sombra con desplazamiento de 2px y difuminado de 4px a los botones, proporcionando profundidad visual al teclado */
+  font-family: "solid"; /* Aplica la fuente personalizada "solid" a los botones */
 }
 
-button:disabled{
-  background-color: rgba(161, 161, 161, 0.16);
+button:disabled {
+  /* Estilos para los botones deshabilitados */
+  background-color: rgba(161, 161, 161, 0.16); /* Establece un color de fondo semitransparente para indicar que el botón está deshabilitado. El valor RGBA define un color gris con una opacidad del 16% */
 }
 
 footer {
-  grid-area: footer;
-  color: aliceblue;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  vertical-align: center;
-  font-family: 'solid';
-  font-size:10px;
-  text-align: center;
-  letter-spacing: 1.5px;
-  line-height: 2;
-  padding-left:20px;
-  padding-right:20px;
-
+  /* Estilos para el pie de página */
+  grid-area: footer; /* Asigna el pie de página a la zona "footer" en el diseño de cuadrícula */
+  color: aliceblue; /* Establece el color del texto en azul claro */
+  width: 100%; /* Establece el ancho del pie de página al 100% del contenedor */
+  display: flex; /* Utiliza un diseño flexible para el contenido del pie de página */
+  justify-content: center; /* Centra horizontalmente el contenido del pie de página */
+  align-items: center; /* Centra verticalmente el contenido del pie de página */
+  vertical-align: center; /* Esto es innecesario, ya que no es una propiedad válida en CSS */
+  font-family: 'solid'; /* Aplica la fuente personalizada 'solid' al contenido del pie de página */
+  font-size: 10px; /* Establece el tamaño de fuente en 10 píxeles */
+  text-align: center; /* Centra el texto horizontalmente en el pie de página */
+  letter-spacing: 1.5px; /* Aumenta el espaciado entre letras a 1.5 píxeles */
+  line-height: 2; /* Establece la altura de línea en 2 veces el tamaño de fuente, proporcionando un espaciado vertical adecuado */
+  padding-left: 20px; /* Agrega un relleno de 20 píxeles en el lado izquierdo del pie de página */
+  padding-right: 20px; /* Agrega un relleno de 20 píxeles en el lado derecho del pie de página */
 }
 
 @media (min-width: 600px) {
+  /* Estilos aplicados en pantallas con un ancho mínimo de 600 píxeles */
+
   .title {
-    font-family: 'tiza';
-    color: whitesmoke;
-    font-weight: 50;
-    font-size: 50px;
-    letter-spacing: -5px;
+    /* Estilos para elementos con clase 'title' en pantallas grandes */
+    font-family: 'tiza'; /* Aplica la fuente personalizada 'tiza' al texto con esta clase */
+    color: whitesmoke; /* Establece el color del texto en blanco ahumado */
+    font-weight: 50; /* Establece el grosor de fuente en 50, lo que puede afectar la negrita del texto */
+    font-size: 50px; /* Establece el tamaño de fuente en 50 píxeles */
+    letter-spacing: -5px; /* Reduce el espaciado entre letras a -5 píxeles, lo que puede dar un aspecto más condensado al texto */
   }
+
   footer {
-    grid-area: footer;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Estilos para el pie de página en pantallas grandes */
+    grid-area: footer; /* Asigna el pie de página a la zona "footer" en el diseño de cuadrícula */
+    width: 100%; /* Establece el ancho del pie de página al 100% del contenedor */
+    display: flex; /* Utiliza un diseño flexible para el contenido del pie de página */
+    align-items: center; /* Centra verticalmente el contenido del pie de página */
+    justify-content: center; /* Centra horizontalmente el contenido del pie de página */
   }
+
   footer p {
-    font-family: 'solid';
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: aliceblue;
+    /* Estilos para los párrafos dentro del pie de página en pantallas grandes */
+    font-family: 'solid'; /* Aplica la fuente personalizada 'solid' al texto dentro de los párrafos */
+    font-size: 12px; /* Establece el tamaño de fuente en 12 píxeles en pantallas grandes */
+    letter-spacing: 2px; /* Aumenta el espaciado entre letras a 2 píxeles */
+    color: aliceblue; /* Establece el color del texto en azul claro */
   }
+
   button {
-    /* teclado */
-    margin: 0.3rem;
-    width: 3rem;
-    height: 3rem;
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
-    font-family: "solid"; 
+    /* Estilos para los botones en pantallas grandes */
+    margin: 0.3rem; /* Establece un margen de 0.3rem alrededor de los botones en pantallas grandes */
+    width: 3rem; /* Establece un ancho de 3rem para los botones en pantallas grandes */
+    height: 3rem; /* Establece una altura de 3rem para los botones en pantallas grandes */
+    border: none; /* Elimina el borde de los botones en pantallas grandes */
+    border-radius: 1rem; /* Agrega bordes redondeados de 1rem a los botones en pantallas grandes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Agrega una sombra con desplazamiento de 2px y difuminado de 4px a los botones en pantallas grandes */
+    font-family: "solid"; /* Aplica la fuente personalizada "solid" a los botones en pantallas grandes */
   }
+
   section.intentos {
-    grid-area: intentos;
-    text-align: center;
-    font-family: 'tiza';
-    font-size:20px;
-    letter-spacing: 4px;
-    color: aliceblue;
-  }
+  /* Estilos para la sección 'intentos' */
+  grid-area: intentos; /* Asigna la sección a la zona "intentos" en el diseño de cuadrícula */
+  text-align: center; /* Centra el contenido de la sección horizontalmente */
+  font-family: 'tiza'; /* Aplica la fuente personalizada 'tiza' al contenido de la sección */
+  font-size: 20px; /* Establece el tamaño de fuente en 20 píxeles */
+  letter-spacing: 4px; /* Aumenta el espaciado entre letras a 4 píxeles */
+  color: aliceblue; /* Establece el color del texto en azul claro */
+}
 
+.modal-contenido {
+  /* Estilos para el contenido del modal */
+  position: absolute; /* Fija la posición del modal en relación con su contenedor */
+  top: 50%; /* Centra el modal verticalmente en la ventana del navegador */
+  left: 50%; /* Centra el modal horizontalmente en la ventana del navegador */
+  transform: translate(-50%, -50%); /* Ajusta el centrado horizontal y vertical del modal */
+  background-color: black; /* Establece el color de fondo del modal en negro */
+  display: flex; /* Utiliza un diseño flexible para el contenido del modal */
+  justify-content: center; /* Centra horizontalmente el contenido del modal */
+  align-items: center; /* Centra verticalmente el contenido del modal */
+  width: 600px; /* Establece un ancho de 600 píxeles para el modal */
+  padding: 30px; /* Agrega un relleno de 30 píxeles al contenido del modal */
+  border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al modal */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Agrega una sombra con desplazamiento de 4px y difuminado de 8px al modal, proporcionando profundidad visual */
+  color: whitesmoke; /* Establece el color del texto en blanco ahumado */
+  font-family: "solid"; /* Aplica la fuente personalizada 'solid' al contenido del modal */
+  font-size: 15px; /* Establece el tamaño de fuente en 15 píxeles */
+  text-align: center; /* Centra el texto horizontalmente en el modal */
+  line-height: 2; /* Establece la altura de línea en 2 veces el tamaño de fuente, proporcionando un espaciado vertical adecuado */
+  letter-spacing: 2px; /* Aumenta el espaciado entre letras a 2 píxeles */
+}
 
-  .modal-contenido {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: black;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    vertical-align: center;
-    width:600px;
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    color: whitesmoke;
-    font-family: "solid";
-    font-size: 15px;
-    text-align:center;
-    line-height: 2;
-    letter-spacing:2px;
-  }
-  
-  #mostrarModal {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-    background-color:rgba(0, 0, 0, 0);
-    color:white;
-    width: 200px;
-    border: 1px solid white;
-  }
+#mostrarModal {
+  /* Estilos para el botón "mostrar modal" */
+  position: fixed; /* Fija la posición del botón en relación con la ventana del navegador */
+  bottom: 0; /* Ancla el botón en la parte inferior de la ventana del navegador */
+  right: 0; /* Ancla el botón en el lado derecho de la ventana del navegador */
+  margin: 10px; /* Agrega un margen de 10 píxeles al botón */
+  background-color: rgba(0, 0, 0, 0); /* Establece un color de fondo semitransparente (casi transparente) para el botón, haciéndolo prácticamente invisible */
+  color: white; /* Establece el color del texto en blanco */
+  width: 200px; /* Establece un ancho de 200 píxeles para el botón */
+  border: 1px solid white; /* Agrega un borde de 1 píxel sólido en blanco alrededor del botón */
+ } 
 }
