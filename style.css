@@ -161,7 +161,7 @@ div.menu {
   width: 300px; /* Establece el ancho del botón en 300 píxeles */
   border: none; /* Elimina el borde del botón */
   border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al botón */
-  padding: 30px 0px 30px 0px; /* Agrega relleno de 30 píxeles arriba y abajo, y 0 píxeles a los lados */
+  padding: 20px 0px 20px 0px; /* Agrega relleno de 30 píxeles arriba y abajo, y 0 píxeles a los lados */
 }
 
 #empiezaElJuego:hover {
@@ -182,7 +182,7 @@ select {
   font-size: 15px; /* Establece el tamaño de fuente en 15 píxeles */
   color: aliceblue; /* Establece el color del texto en azul claro */
   background-color: black; /* Establece el color de fondo del menú desplegable en negro */
-  padding: 20px; /* Agrega relleno de 20 píxeles en todos los lados del menú desplegable */
+  padding: 10px 20px 10px 20px; /* Agrega relleno de 20 píxeles en todos los lados del menú desplegable */
   width: 300px; /* Establece el ancho del menú desplegable en 300 píxeles */
   border: none; /* Elimina el borde del menú desplegable */
   border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al menú desplegable */
@@ -204,9 +204,10 @@ select:focus {
   background-color: black; /* Establece el color de fondo del botón en negro */
   color: white; /* Establece el color del texto en blanco */
   width: 200px; /* Establece el ancho del botón en 200 píxeles */
+  margin-top:20px; /* Agrega espacio encima del botón */
   padding: 10px 20px 10px 20px; /* Agrega relleno de 10 píxeles arriba, 20 píxeles a la derecha e izquierda, y 10 píxeles abajo */
   font-size: 16px; /* Establece el tamaño de fuente en 16 píxeles */
-  border: none; /* Elimina el borde del botón */
+  border: solid 1px white; /* Agrega un border solido de 1px de color blanco */
   border-radius: 5px; /* Agrega bordes redondeados de 5 píxeles al botón */
 }
 
