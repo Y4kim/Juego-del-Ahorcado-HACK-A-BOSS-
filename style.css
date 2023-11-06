@@ -313,9 +313,7 @@ footer {
   text-align: center; /* Centra el texto horizontalmente en el pie de página */
   letter-spacing: 1.5px; /* Aumenta el espaciado entre letras a 1.5 píxeles */
   line-height: 2; /* Establece la altura de línea en 2 veces el tamaño de fuente, proporcionando un espaciado vertical adecuado */
-  padding-left: 20px; /* Agrega un relleno de 20 píxeles en el lado izquierdo del pie de página */
-  padding-right: 20px; /* Agrega un relleno de 20 píxeles en el lado derecho del pie de página */
-  padding-bottom: 2em;
+  padding-bottom: 2em; /* Agrega un relleno de 2 em en la parte inferior para separar el footer de a linea del final.
 }
 
 @media (min-width: 600px) {
