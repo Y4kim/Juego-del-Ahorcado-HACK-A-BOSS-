@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let intentosRestantes = 6; // Inicializa una variable para el número de intentos restantes en el juego.
 
   const arrayCategorias = [ // Crea un array de categorías, cada una de las cuales contiene un array de palabras.
-  ];
+  
 
   // Animales
     [
@@ -477,7 +477,9 @@ document.addEventListener("DOMContentLoaded", function () {
     "Ghostbusters",
     "Memento",
     "Twister",
-    ];
+    ]
+  ];
+
 
 // Definición de una función llamada 'id' que toma un identificador de elemento (ID) como argumento y devuelve el elemento correspondiente.
 function id(str) {
