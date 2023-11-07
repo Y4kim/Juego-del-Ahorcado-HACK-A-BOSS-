@@ -673,7 +673,7 @@ for (let i = 0; i < botonLetra.length; i++) {
 deshabilitarTeclado(true);
 
 } catch {//catch "mensaje de error" con clase "error-message" en el que hago referencia en CSS (linea 323)
-        //un ejemplo para qe salga el error es modificando la función "manejarClicLetra" en la liena 669
+        //un ejemplo para qe salga el error es modificando la función "manejarClicLetra" en la linea 669
   document.write('<div class="error-message" style="color:red;font-family:solid;">¡Ocurrió un error inesperado! Rogamos lo intente de nuevo en unos instantes.</div>');
 }
 });
