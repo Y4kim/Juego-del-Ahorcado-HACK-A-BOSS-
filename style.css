@@ -319,6 +319,13 @@ footer {
   line-height: 2; /* Establece la altura de línea en 2 veces el tamaño de fuente, proporcionando un espaciado vertical adecuado */
   padding-bottom: 2em; /* Agrega un relleno de 2 em en la parte inferior para separar el footer de a linea del final.*/
 }
+
+.error-message {/*estilo al "try" "catch" document.writte*/
+  color: aliceblue;
+  font-size: 50px;
+  background-color: black;
+}
+
 /* Estilos aplicados en pantallas con un ancho mínimo de 600 píxeles */
 @media (min-width:600px) {
   
@@ -416,4 +423,11 @@ footer {
 #empiezaElJuego:disabled {
   background-color: rgba(161, 161, 161, 0.16); /* Establece un color de fondo semitransparente para indicar que el botón está deshabilitado. El valor RGBA define un color gris con una opacidad del 16% */
   }
+
+/*  .error-message {
+  color: aliceblue;
+  font-size: 50px;
+  background-color: black;
+  }  */
+  
 }

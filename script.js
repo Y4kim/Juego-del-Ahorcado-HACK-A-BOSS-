@@ -1,6 +1,9 @@
 "use strict"; // Habilita el modo estricto de JavaScript para un código más seguro.
 
 document.addEventListener("DOMContentLoaded", function () {
+
+  try {//añado "try" para el código general, "catch" en linea 675"!!
+
   // Espera a que se cargue todo el contenido HTML antes de ejecutar el script.
 
   let palabraSecreta; // Declara una variable para almacenar la palabra secreta del juego.
@@ -663,11 +666,16 @@ botonJugar.addEventListener("click", empezarJuego);
 
 // Añade eventos de clic a todos los botones de letras del teclado, llamando a la función 'manejarClicLetra' cuando se hace clic en cada uno.
 for (let i = 0; i < botonLetra.length; i++) {
-  botonLetra[i].addEventListener("click", manejarClicLetra);
+  botonLetra[i].addEventListener("click", manejarClicLetra);//prueba poner manejarClicLetra1
 }
 
 // Inicialmente, deshabilita todos los botones de letras para evitar clics antes de iniciar el juego.
 deshabilitarTeclado(true);
+
+} catch {//catch "mensaje de error" con clase "error-message" en el que hago referencia en CSS (linea 323)
+        //un ejemplo para qe salga el error es modificando la función "manejarClicLetra" en la liena 669
+  document.write('<div class="error-message">¡Ocurrió un error inesperado! Rogamos lo intente de nuevo en unos instantes.</div>');
+}
 });
 
 // La función 'shuffleArray' toma una matriz y la reorganiza aleatoriamente.
