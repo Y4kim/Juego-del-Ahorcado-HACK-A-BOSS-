@@ -35,7 +35,7 @@ main {
     "intentos"
     "teclado"
     "footer"; 
-  grid-template-rows: 4rem 12rem 25rem auto auto 2rem; /* Establece la altura de las filas de la cuadrícula */
+  grid-template-rows: 4rem 12rem 25rem auto auto 4rem; /* Establece la altura de las filas de la cuadrícula */
 }
 
 /* Estilos para el encabezado (header) */
@@ -310,6 +310,10 @@ button:disabled {
 footer {
   /* Estilos para el pie de página */
   grid-area: footer; /* Asigna el pie de página a la zona "footer" en el diseño de cuadrícula */
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: center;
   color: aliceblue; /* Establece el color del texto en azul claro */
   width: 100%; /* Establece el ancho del pie de página al 100% del contenedor */
   font-family: 'solid'; /* Aplica la fuente personalizada 'solid' al contenido del pie de página */
@@ -317,7 +321,10 @@ footer {
   text-align: center; /* Centra el texto horizontalmente en el pie de página */
   letter-spacing: 1.5px; /* Aumenta el espaciado entre letras a 1.5 píxeles */
   line-height: 2; /* Establece la altura de línea en 2 veces el tamaño de fuente, proporcionando un espaciado vertical adecuado */
-  padding-bottom: 2em; /* Agrega un relleno de 2 em en la parte inferior para separar el footer de a linea del final.*/
+}
+footer p{
+  padding-right:30px;
+  padding-left:30px;
 }
 
 .error-message {/*estilo al "try" "catch" document.writte*/
