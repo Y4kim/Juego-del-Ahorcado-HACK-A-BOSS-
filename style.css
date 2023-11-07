@@ -327,11 +327,6 @@ footer p{
   padding-left:30px;
 }
 
-.error-message {/*estilo al "try" "catch" document.writte*/
-  color: aliceblue;
-  font-size: 50px;
-  background-color: black;
-}
 
 /* Estilos aplicados en pantallas con un ancho mínimo de 600 píxeles */
 @media (min-width:600px) {
